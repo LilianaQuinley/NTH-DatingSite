@@ -19,7 +19,7 @@ export class Confirm extends Component {
 
 
     render() {
-        const { values : { firstName, lastName, email, occupation, city, bio } } = this.props;
+        const { values : { firstName, lastName, email, occupation, city, bio, userName, password, reenterPassword } } = this.props;
 
         return (
             <MuiThemeProvider>
@@ -39,6 +39,18 @@ export class Confirm extends Component {
                     secondaryText = { email }
                     />
                     <ListItem
+                    primaryText = "User Name"
+                    secondaryText = { userName }
+                    />
+                    <ListItem
+                    primaryText = "Password"
+                    secondaryText = { password }
+                    />
+                    <ListItem
+                    primaryText = "Reenter Password"
+                    secondaryText = { reenterPassword }
+                    />
+                    <ListItem
                     primaryText = "Occupation"
                     secondaryText = { occupation }
                     />
@@ -47,7 +59,7 @@ export class Confirm extends Component {
                     secondaryText = { city }
                     />
                     <ListItem
-                    primaryText = "About yourself"
+                    primaryText = "About YOU"
                     secondaryText = { bio }
                     />
                        

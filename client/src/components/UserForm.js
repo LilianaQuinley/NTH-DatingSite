@@ -3,8 +3,7 @@ import FormUserDetails from "./FormUserDetails";
 import FormPersonalDetails from "./FormPersonalDetails";
 import Confirm from "./Confirm";
 import Success from "./Success";
-
-
+import UserNamePassword from './UserNamePassword';
 
 
 
@@ -17,7 +16,10 @@ export class UserForm extends Component {
         email: '',
         occupation: '',
         city: '',
-        bio: ''
+        bio: '',
+        userName : '',
+        password : '',
+        reenterPassword: ''
     }
 
     // proceede to next step:
@@ -47,8 +49,8 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
-    const { firstName, lastName, email, occupation, city, bio} = this.state; 
-    const values = { firstName, lastName, email, occupation, city, bio }
+    const { firstName, lastName, email, occupation, city, bio, userName, password, reenterPassword } = this.state; 
+    const values = { firstName, lastName, email, occupation, city, bio, userName, password, reenterPassword }
     
     switch (step) {
         case 1: 
@@ -68,16 +70,26 @@ export class UserForm extends Component {
                 values={values}
                 />
          )
-        case 3:
-        return (
-            <Confirm 
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            values={values}
-            />
-     )
+         case 3:
+            return (
+                <UserNamePassword 
+                nextStep={this.nextStep}
+                prevStep={this.prevStep}
+                handleChange={this.handleChange}
+                values={values}
+                />
+        )
         case 4:
-        return <Success />
+            return (
+                <Confirm 
+                nextStep={this.nextStep}
+                prevStep={this.prevStep}
+                values={values}
+                />
+        )
+        
+        case 5:
+            return <Success />
     }
 
   }
