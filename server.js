@@ -1,11 +1,14 @@
 const express = require("express");
 const path = require("path");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const mongoose = require ('mongoose');
 
 const app = express();
 const DB = require("./models");
 const apiRoutes = require("./routers/api")(app);
+
+const bodyParser = require('body-parser')
+
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -17,6 +20,8 @@ if (process.env.NODE_ENV === "production") {
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
+app.use(bodyParser.json())
 
 
 // If developed, use the deployed database. Otherwise use the local mongoHeadlines database

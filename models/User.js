@@ -1,52 +1,57 @@
 const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
 
+
+
 const userSchema =  new Schema ({
     firstName: {
         type: String,
-        require: true,
-        validate: [validators.notEmpty, 'Name is empty']
+        require:[ true,  'First Name is empty']
     },
+
     lastName:{
         type: String,
-        require: true,
-        validate: [validators.notEmpty, 'Last Name is empty']
+        require:[ true, ' Last Name is empty']
+     
     },
-    email:{
+    email: {
         type: String,
-        required: true,
-        validate: [
-        { validator: validators.notEmpty, msg: 'Email is empty' },
-        { validator: validators.isEmail, msg: 'Invalid email' }
-        ]
-    },
+        unique: true,
+        match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+      },
+
     occupation:{
         type: String,
-        require: true,
-        validate: [validators.notEmpty, 'Occupation is empty']
+        require:[ true, 'Occupation is empty']
+ 
     },
     city:{
         type: String,
-        require: true,
-        validate: [validators.notEmpty, 'City is empty']
+        require:[ true, 'City is empty'],
+
     },
     bio:{
         type: String,
-        require: true,
-        validate: [validators.notEmpty, 'Few words about yourself']
+        require:[ true,' Introduce yourself']
+     
     },
     userName: {
         type: String,
-        require: true,
-        index: { unique: true },
-        validate: [validators.notEmpty, 'UserName is empty']
+        trim: true,
+        required: "Username is Required"
     },
+    
     password: {
         type: String,
-        require: true,
-        index: { unique: true },
-        validate: [validators.notEmpty, 'Password is empty']
-    }
+        trim: true,
+        required: "Password is Required",
+        validate: [
+          function(input) {
+            return input.length >= 6;
+          },
+          "Password should be longer."
+        ]
+      }
    
 })
 

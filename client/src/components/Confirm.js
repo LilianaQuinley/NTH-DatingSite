@@ -3,11 +3,15 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import {List, ListItem} from "material-ui/List";
 import RaisedButton from "material-ui/RaisedButton";
+import api from '../library/API';
 
 export class Confirm extends Component {
 
     continue = e => {
         e.preventDefault();
+        console.log("Sagve the user");
+        console.log(this.props)
+        api.createUser(this.props)
         // PROCESS FORM //
         this.props.nextStep ();
     };
