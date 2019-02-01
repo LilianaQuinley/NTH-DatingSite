@@ -3,6 +3,8 @@ import "./App.css";
 import API from "./library/API";
 import Userlist from "./components/UserList";
 import UserForm from "./components/UserForm";
+import OpenLeftMenu from "./library/OpenLeftMenu";
+import MenuAppBar from "./library/MenuAppBar";
 
 
 class App extends Component {
@@ -24,6 +26,10 @@ class App extends Component {
     return (
       
       <div className="App">
+
+      <OpenLeftMenu/>
+
+      <MenuAppBar />
 
       <UserForm />
 
