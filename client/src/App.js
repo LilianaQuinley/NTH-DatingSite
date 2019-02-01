@@ -5,35 +5,24 @@ import Userlist from "./components/UserList";
 import UserForm from "./components/UserForm";
 import OpenLeftMenu from "./library/OpenLeftMenu";
 import MenuAppBar from "./library/MenuAppBar";
+import Footer  from "./library/Footer";
 
 
 class App extends Component {
-  // state = {
-  //   users: []
-  // }
-
-  // componentDidMount (){
-  
-  //   API.getUsers().then(res => { 
-  //     console.log(res.data)
-  //     this.setState({users:res.data});
-  //   });
-   
-  // }
 
   render() {
-
+    
     return (
       
       <div className="App">
 
-      <OpenLeftMenu/>
+        <OpenLeftMenu/>
 
-      <MenuAppBar />
+        <MenuAppBar />
 
-      <UserForm />
+        <UserForm />
 
-        {/* <Userlist users = {this.state.users} /> */}
+        <Footer/>
 
       </div>
     );

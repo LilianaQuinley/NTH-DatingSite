@@ -4,7 +4,7 @@ import AppBar from "material-ui/AppBar";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 import { black } from 'material-ui/styles/colors';
-
+import Paper from "@material-ui/core/Paper";
 
 
 
@@ -23,6 +23,9 @@ export class FormUserDetails extends Component {
                 <React.Fragment>
                     <AppBar title= " Enter User Details"/>
 
+                
+
+               
                     <TextField
                         hintText = "Enter your First Name"
                         floatingLabelText="First Name"
@@ -43,7 +46,10 @@ export class FormUserDetails extends Component {
                         onChange = {handleChange ('email')}
                         defaultValue = {values.email}
                     />
+
+                   
                     <br/>
+
 
                     <RaisedButton 
                         label = "Continue"
