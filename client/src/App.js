@@ -6,6 +6,7 @@ import UserForm from "./components/UserForm";
 import OpenLeftMenu from "./library/OpenLeftMenu";
 import MenuAppBar from "./library/MenuAppBar";
 import Footer  from "./library/Footer";
+import MainPage from "./components/MainPage";
 
 
 class App extends Component {
@@ -16,11 +17,13 @@ class App extends Component {
       
       <div className="App">
 
-        <OpenLeftMenu/>
+        {/* <OpenLeftMenu/> */}
 
         <MenuAppBar />
 
         <UserForm />
+
+        <MainPage/>
 
         <Footer/>
 

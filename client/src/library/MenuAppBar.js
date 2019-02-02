@@ -30,9 +30,9 @@ function MenuAppBar (props) {
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
-            Nothing to Hide !! CLEAR AS MOOD!!
-          </Typography>
+            <Typography variant="h6" color="inherit" className={classes.grow}>
+               Nothing to Hide !! CLEAR AS MUD!!
+            </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
