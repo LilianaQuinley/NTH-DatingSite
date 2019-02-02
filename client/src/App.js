@@ -7,6 +7,8 @@ import OpenLeftMenu from "./library/OpenLeftMenu";
 import MenuAppBar from "./library/MenuAppBar";
 import Footer  from "./library/Footer";
 import MainPage from "./components/MainPage";
+// import indexForm from "./InputForms/indexForm";
+import InputForm from './InputForm';
 
 
 class App extends Component {
@@ -21,7 +23,10 @@ class App extends Component {
 
         <MenuAppBar />
 
-        <UserForm />
+        {/* <InputForm /> */}
+
+
+        {/* <UserForm /> */}
 
         <MainPage/>
 
