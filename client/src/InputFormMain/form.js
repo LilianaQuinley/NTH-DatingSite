@@ -1,8 +1,11 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import { Form, Field } from 'formik';
 
-export const Form = (props) => {
+
+
+export const FormMain = (props) => {
   const {
     values: { name, email, password, confirmPassword },
     errors,
@@ -22,22 +25,23 @@ export const Form = (props) => {
 
 
   return (
-   <form
+   <Form
      onSubmit={() => {
        alert("submitted");
      }}
    >
-     <TextField
-       id="name"
-       name="name"
-       helperText={touched.name ? errors.name : ""}
-       error={touched.name && Boolean(errors.name)}
-       label="Name"
-       value={name}
-       onChange={change.bind(null, "name")}
-       fullWidth
-
-     />
+   
+      <TextField
+        id="name"
+        name="name"
+        helperText={touched.name ? errors.name : ""}
+        error={touched.name && Boolean(errors.name)}
+        label="Name"
+        value={name}
+        onChange={change.bind(null, "name")}
+        fullWidth
+      />
+    
      <TextField
        id="email"
        name="email"
@@ -82,6 +86,7 @@ export const Form = (props) => {
      >
        Submit
      </Button>
-   </form>
+  
+   </Form>
  );
 };

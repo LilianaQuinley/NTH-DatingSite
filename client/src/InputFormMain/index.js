@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Formik } from "formik";
 import withStyles from "@material-ui/core/styles/withStyles";
-import { Form } from "./form";
+import { FormMain } from "./form";
 import Paper from "@material-ui/core/Paper";
 import * as Yup from "yup"
 
@@ -50,10 +50,10 @@ class InputForm extends Component {
     <div className={classes.container}>
         <Paper elevation={1} className={classes.paper}>
         <h1>Sign UP </h1>
-        <h2>There is Nothing to Loose!</h2>
+        <h2>There is Nothing to Loose! @@</h2>
       
         <Formik
-            render={props => <Form {...props} />}
+            render={props => <FormMain {...props} />}
             initialValues={values}
             validationSchema={validationSchema}
         />
