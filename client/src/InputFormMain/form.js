@@ -43,7 +43,7 @@ export const Form = (props) => {
        name="email"
        helperText={touched.email ? errors.email : ""}
        error={touched.email && Boolean(errors.email)}
-       label="EmailNuevo Email"
+       label="Email"
        fullWidth
        value={email}
        onChange={change.bind(null, "email")}
