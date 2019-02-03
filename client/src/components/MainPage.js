@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 import LeftPane from "../library/LeftPane"; 
 import RightPane from "../library/RightPane";
 
@@ -23,7 +23,7 @@ export class MainPage extends Component {
   }
 }
 const styles = {
-    Paper : {padding: 20, marginTop: 10, marginBottom: 10 }
+    Paper : {padding: 25, margin: 10 }
 }
 
 export default MainPage;

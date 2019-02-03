@@ -10,7 +10,7 @@ const validationSchema = Yup.object({
   name: Yup.string("Enter a name")
   .required("Name is required"),
   email: Yup.string("Enter your email")
-  .email("Enter a valid email")
+  .email("Enter a valid BUEVemail")
   .required("Email is required"),
   password: Yup.string("")
   .min(8, "Password must contain at least 8 characters")
@@ -49,7 +49,9 @@ class InputForm extends Component {
 <React.Fragment>
     <div className={classes.container}>
         <Paper elevation={1} className={classes.paper}>
-        <h1>Form</h1>
+        <h1>Sign UP </h1>
+        <h2>There is Nothing to Loose!</h2>
+      
         <Formik
             render={props => <Form {...props} />}
             initialValues={values}

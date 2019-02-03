@@ -32,11 +32,12 @@ function LeftPane(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            my website
+            Welcome to NTL  
           </Typography>
           <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            The NEW and IMPROVE way to Find the Right Person for you!
+            Nothing to Hide offers the most Safe and Sound way to know and meet people !
+        
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -54,7 +55,7 @@ function LeftPane(props) {
 }
 
 const styles = {
-    Paper : {padding: 20, marginTop: 10, marginBottom: 10 },
+    Paper : {padding: 20, margin: 10},
     
     card: {
         width: 151
