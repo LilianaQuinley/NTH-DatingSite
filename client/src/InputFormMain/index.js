@@ -69,16 +69,16 @@ class InputForm extends Component {
   return (
 <React.Fragment>
     <div className={classes.container}>
-        <Paper elevation={1} className={classes.paper}>
+       
         <h1>Sign UP </h1>
-        <h2>There is Nothing to Loose! @@</h2>
+        <h2>There is Nothing to Loose!</h2>
       
         <Formik
             render={props => <FormMain {...props} />}
             initialValues={values}
             validationSchema={validationSchema}
         />
-        </Paper>
+       
     </div>
 </React.Fragment>
 );

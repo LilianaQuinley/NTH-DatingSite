@@ -87,7 +87,7 @@ export const FormMain = (props) => {
         label="First Name"
         value={firstName}
         onChange={change.bind(null, "name")}
-        style={{ margin: 8, padding:10, width:250}}
+        style={{ margin: 8, padding:8, width:200}}
         variant="outlined"
       />
       
@@ -100,7 +100,7 @@ export const FormMain = (props) => {
         label="Last Name"
         value={lastName}
         onChange={change.bind(null, "name")}
-        style={{ margin: 8, padding:10, width:250}}
+        style={{ margin: 8, padding:8, width:200}}
         variant="outlined"
       />
     
@@ -108,7 +108,7 @@ export const FormMain = (props) => {
        required
        id="outlined-full-width"
        name="email"
-       style={{ margin: 8, marginRight: 4,  padding:10}}
+       style={{ margin: 8, marginRight: 8,  padding:10}}
        helperText={touched.email ? errors.email : ""}
        error={touched.email && Boolean(errors.email)}
        label="Email"
@@ -125,7 +125,7 @@ export const FormMain = (props) => {
        helperText={touched.password ? errors.password : ""}
        error={touched.password && Boolean(errors.password)}
        label="Password"
-       style={{ margin: 8, padding:10, width:250}}
+       style={{ margin: 8, padding:8, width:200}}
        variant="outlined"
        type="password"
        value={password}
@@ -139,7 +139,7 @@ export const FormMain = (props) => {
        helperText={touched.confirmPassword ? errors.confirmPassword : ""}
        error={touched.confirmPassword && Boolean(errors.confirmPassword)}
        label="Confirm Password"
-       style={{ margin: 8, padding:10, width:250}}
+       style={{ margin: 8, padding:8, width:200}}
        variant="outlined"
        type="password"
        value={confirmPassword}
