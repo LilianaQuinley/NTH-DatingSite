@@ -10,6 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import TextField from '@material-ui/core/TextField';
 import green from '@material-ui/core/colors/green';
 import { white } from 'material-ui/styles/colors';
+import { transparent } from 'material-ui/styles/colors';
 
 const styles = theme => ( {
   root: {
@@ -26,23 +27,18 @@ const styles = theme => ( {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     marginTop: theme.spacing.unit,
-    width: 200,
+    width: 250,
     background: white,
   },
 });
 
-const theme = createMuiTheme({
-  palette: {
-    primary: green,
-  },
-  typography: { useNextVariants: true },
-});
+
 
 function MenuAppBar (props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
           {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />

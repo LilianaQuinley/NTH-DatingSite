@@ -9,6 +9,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import shadows from '@material-ui/system/shadows';
+import { Radio } from '@material-ui/core';
+import { borderRadius } from '@material-ui/system/borders';
 //import Picture from "../Assets/Images/Liliana_Quinley.jpg"
 
 
@@ -19,7 +22,7 @@ function LeftPane(props) {
     <Card style = {styles.card}>
         <CardActionArea>
             <CardContent>
-                <Typography gutterBottom variant="display" component="h3" color="primary">
+                <Typography gutterBottom variant="display3" component="h3" color="primary">
                     Welcome to NTH!
                 </Typography>
                 <Typography variant="h6">
@@ -46,10 +49,12 @@ const styles = {
     Paper : {padding: 20, margin: 50},
     
     card: {
-        margin: 100,
+        margin: 80,
         width: 500,
-        height: 450,
-        backgroundColor: 'transparent'
+        height: 300,
+        backgroundColor: 'transparent',
+        borderColor:"transparent"
+       
        },
     
     media: {
