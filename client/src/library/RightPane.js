@@ -6,20 +6,26 @@ import Card from '@material-ui/core/Card';
 export class RightPane extends Component {
   render() {
     return (
-      < Paper style = {styles.Paper}>
+     // < Paper style = {styles.Paper}>
         <Card style = {styles.card}>
              <InputFormMain />  
         </Card>
-      </Paper>
+     // </Paper>
      
     )
   }
 }
 const styles = {
-    Paper : {padding: 20, margin: 50 },
+    Paper : {padding: 20, margin: 50,
+    backgroundColor: 'transparent'
+    },
+
     card: {
+      margin: 10,
       width: 500,
-      height: 350
+      height: 800,
+      backgroundColor: 'transparent',
+
      },
      media: {
       objectFit: 'cover',

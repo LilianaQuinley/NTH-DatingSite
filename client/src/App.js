@@ -21,7 +21,7 @@ class App extends Component {
 
         {/* <OpenLeftMenu/> */}
 
-        {/* <MenuAppBar /> */}
+        <MenuAppBar />
 
         {/* <InputFormMain /> */}
 

@@ -76,8 +76,6 @@ export const FormMain = (props) => {
       alert("submitted");
     }}>
      
-   
-   
       <TextField
         required
         id="firstName-required"
@@ -148,7 +146,7 @@ export const FormMain = (props) => {
      />
      <Button
        type="submit"
-       fullWidth
+       
        variant="raised"
        color="primary"
        disabled={!isValid}
