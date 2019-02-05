@@ -63,9 +63,9 @@ class InputForm extends Component {
  render() {
    console.log(this.props)
   const classes = this.props;
-  console.log("classes in index.js")
-  console.log(classes)
-  const values = { firstName:"", lastName: "", email: "", confirmPassword: "", password: "" };
+  const {toggleFun} =this.props;
+  const values = { firstName:"", lastName: "", 
+  email: "", confirmPassword: "", password: "" };
   return (
 <React.Fragment>
     <div className={classes.container}>
@@ -74,7 +74,7 @@ class InputForm extends Component {
         <h2>There is Nothing to Loose!</h2>
       
         <Formik
-            render={props => <FormMain {...props} />}
+            render={props => <FormMain {...props} toggleFun = {toggleFun} />}
             initialValues={values}
             validationSchema={validationSchema}
         />

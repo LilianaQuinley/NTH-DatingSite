@@ -46,11 +46,7 @@ const theme = createMuiTheme({
 
 export const FormMain = (props) => {
   const { classes } = props;
-  console.log(props);
-  console.log("Now our classes");
-  console.log( { classes })
-  console.log("Our theme.");
-  console.log(mystyles)
+  const {toggleFun} = props;
 
 
   const {
@@ -72,8 +68,10 @@ export const FormMain = (props) => {
 
 
   return (
-    <form noValidate autoComplete="off" onSubmit={() => {
-      alert("submitted");
+    <form noValidate autoComplete="off" onSubmit={(e) => {
+      e.preventDefault();
+      toggleFun ('registering')
+      //go to Step 1
     }}>
      
       <TextField
@@ -145,8 +143,7 @@ export const FormMain = (props) => {
 
      />
      <Button
-       type="submit"
-       
+       type="submit" 
        variant="raised"
        color="primary"
        disabled={!isValid}

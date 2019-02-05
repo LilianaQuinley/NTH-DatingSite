@@ -5,10 +5,12 @@ import Card from '@material-ui/core/Card';
 
 export class RightPane extends Component {
   render() {
+    const {toggleFun} = this.props;
+
     return (
      // < Paper style = {styles.Paper}>
         <Card style = {styles.card}>
-             <InputFormMain />  
+             <InputFormMain  toggleFun = {toggleFun}/>  
         </Card>
      // </Paper>
      

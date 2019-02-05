@@ -6,6 +6,7 @@ import RightPane from "../library/RightPane";
 
 export class MainPage extends Component {
   render() {
+    const {toggleFun} = this.props;
     return (
       <div>
         <Grid container>
@@ -14,7 +15,7 @@ export class MainPage extends Component {
             </Grid>
 
             <Grid item sm>
-                <RightPane styles = {styles} /> 
+                <RightPane styles = {styles} toggleFun = {toggleFun} /> 
             </Grid>
         </Grid>
        
