@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-
-import {cyan500} from 'material-ui/styles/colors';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import AppBar from "material-ui/AppBar";
@@ -34,14 +32,11 @@ export class FormUserDetails extends Component {
         //     setValue (e.target.value);
         // }
         const muiTheme = getMuiTheme({
-            palette: {
-              textColor: cyan500,
-       
-            },
+        
             appBar: {
               height: 50,
-              textColor: "red",
-              backGroundColor: "red"
+              textColor: "white",
+              color: "blue"
               
             },
           });
