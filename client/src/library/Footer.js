@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-
 import Paper from "@material-ui/core/Paper";
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import PhoneIcon from '@material-ui/icons/Phone';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import PersonPinIcon from '@material-ui/icons/PersonPin';
 import HelpIcon from '@material-ui/icons/Help';
@@ -15,15 +13,14 @@ export class Footer extends Component {
   render() {
     return (
       <div>
-         <Paper>
+         <Paper style = {{  backgroundColor: 'transparent'}}>
             <Tabs
                 value = {0}      
                 indicatorColor="primary" 
-                textColor = "primary"
+                textColor = "blue"
                 centered
+                style={{ marginTop: 150}}
              >
-
-            <Tab icon={<PhoneIcon />} />
             <Tab icon={<FavoriteIcon />} />
             <Tab icon={<PersonPinIcon />} />
             <Tab icon={<HelpIcon />} />
@@ -37,6 +34,7 @@ export class Footer extends Component {
     )
   }
 }
+
 
 export default Footer
 

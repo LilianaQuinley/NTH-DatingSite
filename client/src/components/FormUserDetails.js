@@ -45,7 +45,8 @@ export class FormUserDetails extends Component {
             <MuiThemeProvider muiTheme={muiTheme}>
                 <React.Fragment>
                     <AppBar 
-                        title= " Enter User Details"/>
+                        position="sticky"
+                        title= " User Details"/>
 
                     <form className={classes.container} noValidate>
 

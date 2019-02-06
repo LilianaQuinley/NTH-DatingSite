@@ -9,13 +9,13 @@ export class MainPage extends Component {
     const {toggleFun} = this.props;
     return (
       <div>
-        <Grid container>
+        <Grid container style = {styles.container}>
             <Grid item sm>
-                <LeftPane styles = {styles} />   
+                <LeftPane  />   
             </Grid>
 
             <Grid item sm>
-                <RightPane styles = {styles} toggleFun = {toggleFun} /> 
+                <RightPane  toggleFun = {toggleFun} /> 
             </Grid>
         </Grid>
        
@@ -24,7 +24,14 @@ export class MainPage extends Component {
   }
 }
 const styles = {
-    Paper : {padding: 25, margin: 10 }
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    alignItems: "center",
+    marginLeft : 50,
+    color: "red"
+  },
+   
 }
 
 export default MainPage;

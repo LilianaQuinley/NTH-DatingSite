@@ -7,7 +7,6 @@ import OpenLeftMenu from "./library/OpenLeftMenu";
 import MenuAppBar from "./library/MenuAppBar";
 import Footer  from "./library/Footer";
 import MainPage from "./components/MainPage";
-// import indexForm from "./InputForms/indexForm";
 import InputFormMain from './InputFormMain';
 
 class App extends Component {
@@ -17,7 +16,7 @@ class App extends Component {
   }
 
   toggleFun = (stateS) => {
-    this.setState({userState : stateS})
+    this.setState({userState : stateS})   
   }
 
   render() {

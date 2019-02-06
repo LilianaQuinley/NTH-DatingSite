@@ -8,9 +8,8 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import TextField from '@material-ui/core/TextField';
-import green from '@material-ui/core/colors/green';
 import { white } from 'material-ui/styles/colors';
-import { transparent } from 'material-ui/styles/colors';
+
 
 const styles = theme => ( {
   root: {
@@ -27,11 +26,10 @@ const styles = theme => ( {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     marginTop: theme.spacing.unit,
-    width: 250,
+    height:30,
     background: white,
   },
 });
-
 
 
 function MenuAppBar (props) {
@@ -51,7 +49,6 @@ function MenuAppBar (props) {
               label="Email Address"
               className={classes.textField}
               autoComplete="email"    
-              margin="normal"
               // value={values.name}
               // onChange={handleChange('name')}
             
@@ -62,7 +59,6 @@ function MenuAppBar (props) {
               className={classes.textField}
               type="password"
               autoComplete="current-password"
-              margin="normal"
               
             />
             <Button color="inherit" onClick={() => { alert("Clicked!"); }}>Login</Button>
