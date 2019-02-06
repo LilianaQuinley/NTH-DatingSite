@@ -22,44 +22,43 @@ class App extends Component {
 
   render() {
 
-    if(this.state.userState == "registering") {
-      return (
-        <div className = "App">
-          <UserForm />
-          <Footer />
-        </div>
-      )}
-      else if (this.state.userState == "nonuser"){
-        return (
-        <div className = "App">
-          <MenuAppBar />
-          <MainPage toggleFun ={this.toggleFun} />
-        </div>
-      )
-    }
-  }    
-}
+    // if(this.state.userState == "registering") {
+    //   return (
+    //     <div className = "App">
+    //       <UserForm />
+    //       <Footer />
+    //     </div>
+    //   )}
+    //   else if (this.state.userState == "nonuser"){
+    //     return (
+    //     <div className = "App">
+    //       <MenuAppBar />
+    //       <MainPage toggleFun ={this.toggleFun} />
+    //     </div>
+    //   )
+    // }
 
-//     return (
+
+return (
       
-//       <div className="App">
+  <div className="App">
 
-//         {/* <OpenLeftMenu/> */}
+        {/* <OpenLeftMenu/> */}
 
-//         <MenuAppBar />
+{/* //         <MenuAppBar /> */}
 
-//         {/* <InputFormMain /> */}
+         {/* <InputFormMain /> */}
+         <UserForm /> 
+
+{/* //         <MainPage/> */}
+
+         {/* <Footer/> */}
+
+      </div>
+ );
 
 
-//         {/* <UserForm /> */}
-
-//         <MainPage/>
-
-//         {/* <Footer/> */}
-
-//       </div>
-//     );
-//   }
-// }
+}    
+}
 
 export default App;
