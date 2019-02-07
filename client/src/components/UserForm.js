@@ -3,7 +3,7 @@ import FormUserDetails from "./FormUserDetails";
 import FormPersonalDetails from "./FormPersonalDetails";
 import Confirm from "./Confirm";
 import Success from "./Success";
-import UserNamePassword from './UserNamePassword';
+import FormFinancialDetails from './FormFinancialDetails';
 
 
 
@@ -72,7 +72,7 @@ export class UserForm extends Component {
          )
          case 3:
             return (
-                <UserNamePassword 
+                <FormFinancialDetails 
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 handleChange={this.handleChange}

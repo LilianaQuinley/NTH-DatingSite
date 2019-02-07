@@ -19,7 +19,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 
 
 
-export class FormPersonalDetails extends Component {
+export class FormFinancialDetails extends Component {
 
     continue = e => {
         e.preventDefault();
@@ -51,13 +51,13 @@ export class FormPersonalDetails extends Component {
                 <React.Fragment>
                     <AppBar 
                         position="sticky"
-                        title= "Personal Details"/>
+                        title= "Financial Details"/>
 
                     <form className={classes.container} noValidate>
 
                         <Typography variant="h6" color="inherit" className={classes.grow}>
                         <br/>
-                        Some 
+                        A Little
                         <br/>
                         More, 
                         <br/>
@@ -68,110 +68,123 @@ export class FormPersonalDetails extends Component {
                   
                     
                     <FormControl component="fieldset" className={classes.formControl}>
-                        <FormLabel component="legend"className={classes.formLabel}
-                        >What is your relationship status?</FormLabel>
+                        <FormLabel component="legend" className={classes.formLabel}>
+                        What is your education level? </FormLabel>
                             <RadioGroup
-                            aria-label="marital status"
-                            name="maritalStatus"
+                            aria-label="education"
+                            name="education"
                             className={classes.group}
                             value={value}
                             onChange={handleChange}
                             >
                             <FormControlLabel
-                                value="neverMarried"
+                                value="master"
                                 control={<Radio color="primary" />}
-                                label="Single (Never married)"
+                                label="Masters / Professional / Ph.D’s degree"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="divorced"
+                                value="barchelorAssociate"
                                 control={<Radio color="primary" />}
-                                label="Divorced"
+                                label="Bachelorette / Associate’s degree"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="separated"
+                                value="someCollege"
                                 control={<Radio color="primary" />}
-                                label="Separated"
+                                label="Some College/Trade/technical/vocational training"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="complicated"
+                                value="highSchool"
                                 control={<Radio color="primary" />}
-                                label="It's Complicated"
+                                label="High School"
                                 labelPlacement="start"
                             />
-                            </RadioGroup>              
+                            <FormControlLabel
+                                value="LessHighSchool"
+                                control={<Radio color="primary" />}
+                                label="High Less than high school"
+                                labelPlacement="start"
+                            />
+                        </RadioGroup>
+                        
                     </FormControl>
-
                     <FormControl component="fieldset" className={classes.formControl}>
                         <FormLabel component="legend" className={classes.formLabel}>
-                        What type of relationship would you like </FormLabel>
+                        Are you currently..? </FormLabel>
                             <RadioGroup
-                            aria-label="kindOfRelationship"
-                            name="kindOfRelationship"
+                            aria-label="employment"
+                            name="employmentStatus"
                             className={classes.group}
                             value={value}
                             onChange={handleChange}
                             >
                             <FormControlLabel
-                                value="casualDating"
+                                value="employed"
                                 control={<Radio color="primary" />}
-                                label="Casual Dating"
+                                label="Employed"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="longTerm"
+                                value="selEmployed"
                                 control={<Radio color="primary" />}
-                                label="Long-Term Relationship"
+                                label="Self-employed"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="marriage"
+                                value="notWorking"
                                 control={<Radio color="primary" />}
-                                label="Marriage"
+                                label="Not Working"
                                 labelPlacement="start"
                             />
                             </RadioGroup>
+                        
                     </FormControl>
 
                     <FormControl component="fieldset" className={classes.formControl}>
                         <FormLabel component="legend" className={classes.formLabel}>
-                        Do you have children?</FormLabel>
+                        What is your income range? </FormLabel>
                             <RadioGroup
-                            aria-label="have Children"
-                            name="haveChildren"
+                            aria-label="incomeRange?"
+                            name="Income Range?"
                             className={classes.group}
                             value={value}
                             onChange={handleChange}
                             >
                             <FormControlLabel
-                                value="noChildren"
+                                value="Over150"
                                 control={<Radio color="primary" />}
-                                label="No"
+                                label="Over $150,000"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="yesAtHome"
+                                value="between100and150"
                                 control={<Radio color="primary" />}
-                                label="Yes (Living at home full time)"
+                                label="$100,000 - $150,000"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="yesPartTime"
+                                value="between50and100"
                                 control={<Radio color="primary" />}
-                                label="Yes (Living at home part time)"
+                                label="$50,000 - $100,000"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="yesNotAtHome"
+                                value="between25and50"
                                 control={<Radio color="primary" />}
-                                label="Yes (Not Living at home)"
+                                label="$25,000 - $50,000"
                                 labelPlacement="start"
                             />
-                            </RadioGroup>                        
+                            <FormControlLabel
+                                value="Under25"
+                                control={<Radio color="primary" />}
+                                label="Under $25,000"
+                                labelPlacement="start"
+                            />
+                            </RadioGroup>
+              
                     </FormControl>
-
                 </form>
 
                 <Button
@@ -249,10 +262,8 @@ const styles = theme => ({
   });
 
 
-  FormPersonalDetails.propTypes = {
+  FormFinancialDetails.propTypes = {
     classes: PropTypes.object.isRequired,
   };
   
-  export default withStyles(styles)(FormPersonalDetails);
-
-
+  export default withStyles(styles)(FormFinancialDetails);

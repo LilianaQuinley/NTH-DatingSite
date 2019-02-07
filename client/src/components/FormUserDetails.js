@@ -60,10 +60,11 @@ export class FormUserDetails extends Component {
                         Seeking for..
                         </Typography>
                   
-                    <FormControl component="fieldset" className={classes.formControl}>                      
+                    <FormControl component="fieldset" className={classes.formControl}>
+                    <FormLabel component="legend" className={classes.formLabel}>Birthday</FormLabel>                      
                         <TextField
                             id="date"
-                            label="Birthday"
+                            label=".."
                             type="date"
                             // defaultValue="2017-05-24"
                             className={classes.textField}
@@ -74,7 +75,7 @@ export class FormUserDetails extends Component {
                     </FormControl>
                     
                     <FormControl component="fieldset" className={classes.formControl}>
-                        <FormLabel component="legend">Gender</FormLabel>
+                        <FormLabel component="legend" className={classes.formLabel}>Gender</FormLabel>
                             <RadioGroup
                             aria-label="gender"
                             name="gender2"
@@ -100,19 +101,11 @@ export class FormUserDetails extends Component {
                                 label="Other"
                                 labelPlacement="start"
                             />
-                            <FormControlLabel
-                                value="disabled"
-                                disabled
-                                control={<Radio />}
-                                label="(Disabled option)"
-                                labelPlacement="start"
-                            />
                             </RadioGroup>
-                        <FormHelperText>labelPlacement start</FormHelperText>
                     </FormControl>
 
                     <FormControl component="fieldset" className={classes.formControl}>
-                        <FormLabel component="legend">Seeking for</FormLabel>
+                        <FormLabel component="legend"className={classes.formLabel}>Seeking for</FormLabel>
                             <RadioGroup
                             aria-label="gender"
                             name="gender2"
@@ -138,16 +131,56 @@ export class FormUserDetails extends Component {
                                 label="Other"
                                 labelPlacement="start"
                             />
+                            </RadioGroup>
+                    </FormControl>
+                    <FormControl component="fieldset" className={classes.formControl}>
+                        <FormLabel component="legend"className={classes.formLabel}> Ethnic origin</FormLabel>
+                            <RadioGroup
+                            aria-label="ethnic"
+                            name="ethnic"
+                            className={classes.group}
+                            value={value}
+                            onChange={handleChange}
+                            >
                             <FormControlLabel
-                                value="disabled"
-                                disabled
-                                control={<Radio />}
-                                label="(Disabled option)"
+                                value="white"
+                                control={<Radio color="primary" />}
+                                label="White"
+                                labelPlacement="start"
+                            />
+                            <FormControlLabel
+                                value="hispanic"
+                                control={<Radio color="primary" />}
+                                label="Hispanic or Latino"
+                                labelPlacement="start"
+                            />
+                            <FormControlLabel
+                                value="black"
+                                control={<Radio color="primary" />}
+                                label="Black or African American"
+                                labelPlacement="start"
+                            />
+                            <FormControlLabel
+                                value="nativeAmerican"
+                                control={<Radio color="primary" />}
+                                label="Native American or American Indian"
+                                labelPlacement="start"
+                            />
+                            <FormControlLabel
+                                value="asianPacific"
+                                control={<Radio color="primary" />}
+                                label="Native Asian / Pacific Islander "
+                                labelPlacement="start"
+                            />
+                             <FormControlLabel
+                                value="other"
+                                control={<Radio color="primary" />}
+                                label="Other "
                                 labelPlacement="start"
                             />
                             </RadioGroup>
-                        <FormHelperText>labelPlacement start</FormHelperText>
                     </FormControl>
+
                 </form>
 
                 <Button
@@ -170,11 +203,13 @@ export class FormUserDetails extends Component {
 
 const styles = theme => ({
 
+    grow: {
+        color: "teal"
+    },
+
     appBar: {
-        backGroundColor: 'red',
         height: 50,
         alignItems: "center",
-        textColor: "red"
       },
 
     button : {
@@ -184,8 +219,7 @@ const styles = theme => ({
     container: {
       display: 'flex',
       flexWrap: 'wrap',
-      alignItems: "center",
-      marginLeft : 50
+      margin : 40
     },
 
     textField: {
@@ -199,6 +233,9 @@ const styles = theme => ({
       },
       formControl: {
         margin: theme.spacing.unit * 3,
+      },
+      formLabel: {
+        color: "blue"
       },
       group: {
         margin: `${theme.spacing.unit}px 0`,

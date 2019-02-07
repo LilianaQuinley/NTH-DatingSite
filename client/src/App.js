@@ -42,26 +42,4 @@ class App extends Component {
 export default App;
 
 
-// return (
-      
-//   <div className="App">
-
-//         {/* <OpenLeftMenu/> */}
-
-// {/* //         <MenuAppBar /> */}
-
-//          {/* <InputFormMain /> */}
-//          <UserForm /> 
-
-// {/* //         <MainPage/> */}
-
-//          {/* <Footer/> */}
-
-//       </div>
-//  );
-
-
-// }    
-// }
-
 
