@@ -71,11 +71,12 @@ export class FormPersonalDetails extends Component {
                         <FormLabel component="legend"className={classes.formLabel}
                         >What is your relationship status?</FormLabel>
                             <RadioGroup
-                            aria-label="marital status"
-                            name="maritalStatus"
+                            aria-label="relationship Status"
+                            name="relationshipStatus"
                             className={classes.group}
-                            value={value}
-                            onChange={handleChange}
+                            onChange={handleChange ('relationshipStatus')}
+                            defaultValue= {values.relationshipStatus}
+
                             >
                             <FormControlLabel
                                 value="neverMarried"
@@ -108,11 +109,11 @@ export class FormPersonalDetails extends Component {
                         <FormLabel component="legend" className={classes.formLabel}>
                         What type of relationship would you like </FormLabel>
                             <RadioGroup
-                            aria-label="kindOfRelationship"
-                            name="kindOfRelationship"
+                            aria-label="relationshipLooking"
+                            name="relationshipLooking"
                             className={classes.group}
-                            value={value}
-                            onChange={handleChange}
+                            onChange={handleChange ('relationshipLooking')}
+                            defaultValue= {values.relationshipLooking}
                             >
                             <FormControlLabel
                                 value="casualDating"
@@ -142,8 +143,8 @@ export class FormPersonalDetails extends Component {
                             aria-label="have Children"
                             name="haveChildren"
                             className={classes.group}
-                            value={value}
-                            onChange={handleChange}
+                            onChange={handleChange ('haveChildren')}
+                            defaultValue= {values.haveChildren}
                             >
                             <FormControlLabel
                                 value="noChildren"

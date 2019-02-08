@@ -29,7 +29,8 @@ export class Confirm extends Component {
     };
 
     render() {
-    const { values : { firstName, lastName, email, occupation, city, bio, userName, password, reenterPassword } } = this.props;
+    const { values : { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking,
+        haveChildren, educationLevel, employmentStatus, incomeRange } } = this.props;
 
     const muiTheme = getMuiTheme({
         
@@ -50,40 +51,44 @@ export class Confirm extends Component {
                         title= "Personal Details"/>
                 <List>
                     <ListItem
-                    primaryText = "First Name"
-                    secondaryText = { firstName }
+                    primaryText = "Birthday"
+                    secondaryText = { birthday }
                     />
                     <ListItem
-                    primaryText = "Last Name"
-                    secondaryText = { lastName }
+                    primaryText = "Gender"
+                    secondaryText = { gender }
                     />
                     <ListItem
-                    primaryText = "Email"
-                    secondaryText = { email }
+                    primaryText = "Looking For"
+                    secondaryText = { lookingFor }
                     />
                     <ListItem
-                    primaryText = "User Name"
-                    secondaryText = { userName }
+                    primaryText = "Ethnic"
+                    secondaryText = { ethnic }
                     />
                     <ListItem
-                    primaryText = "Password"
-                    secondaryText = { password }
+                    primaryText = "Relationship Status"
+                    secondaryText = { relationshipStatus }
                     />
                     <ListItem
-                    primaryText = "Reenter Password"
-                    secondaryText = { reenterPassword }
+                    primaryText = "Relationship Looking For"
+                    secondaryText = { relationshipLooking }
                     />
                     <ListItem
-                    primaryText = "Occupation"
-                    secondaryText = { occupation }
+                    primaryText = "Do you Have Children"
+                    secondaryText = { haveChildren }
                     />
                     <ListItem
-                    primaryText = "City"
-                    secondaryText = { city }
+                    primaryText = "Education Level"
+                    secondaryText = { educationLevel }
                     />
                     <ListItem
-                    primaryText = "About YOU"
-                    secondaryText = { bio }
+                    primaryText = "Employment Status"
+                    secondaryText = { employmentStatus }
+                    />
+                    <ListItem
+                    primaryText = "Income Range"
+                    secondaryText = { incomeRange }
                     />
                         
                 </List>

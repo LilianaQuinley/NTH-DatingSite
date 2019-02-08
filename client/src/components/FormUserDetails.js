@@ -28,9 +28,7 @@ export class FormUserDetails extends Component {
 
     render() {
         const { classes, value, values, handleChange } = this.props;
-        // function handleChange (e) {
-        //     setValue (e.target.value);
-        // }
+
         const muiTheme = getMuiTheme({
         
             appBar: {
@@ -63,10 +61,11 @@ export class FormUserDetails extends Component {
                     <FormControl component="fieldset" className={classes.formControl}>
                     <FormLabel component="legend" className={classes.formLabel}>Birthday</FormLabel>                      
                         <TextField
-                            id="date"
+                            id="birthday"
                             label=".."
                             type="date"
-                            // defaultValue="2017-05-24"
+                            onChange={handleChange ('birthday')}
+                            defaultValue= {values.birthday}
                             className={classes.textField}
                             InputLabelProps={{
                             shrink: true,
@@ -79,9 +78,9 @@ export class FormUserDetails extends Component {
                             <RadioGroup
                             aria-label="gender"
                             name="gender2"
+                            onChange={handleChange ('gender')}
+                            defaultValue= {values.gender}
                             className={classes.group}
-                            value={value}
-                            onChange={handleChange}
                             >
                             <FormControlLabel
                                 value="female"
@@ -105,13 +104,13 @@ export class FormUserDetails extends Component {
                     </FormControl>
 
                     <FormControl component="fieldset" className={classes.formControl}>
-                        <FormLabel component="legend"className={classes.formLabel}>Seeking for</FormLabel>
+                        <FormLabel component="legend"className={classes.formLabel}>Looking for</FormLabel>
                             <RadioGroup
-                            aria-label="gender"
-                            name="gender2"
+                            aria-label="lookingFor"
+                            name="lookingFor"
+                            onChange={handleChange ('lookingFor')}
+                            defaultValue= {values.lookingFor}
                             className={classes.group}
-                            value={value}
-                            onChange={handleChange}
                             >
                             <FormControlLabel
                                 value="female"
@@ -138,9 +137,9 @@ export class FormUserDetails extends Component {
                             <RadioGroup
                             aria-label="ethnic"
                             name="ethnic"
+                            onChange={handleChange ('ethnic')}
+                            defaultValue= {values.ethnic}
                             className={classes.group}
-                            value={value}
-                            onChange={handleChange}
                             >
                             <FormControlLabel
                                 value="white"

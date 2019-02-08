@@ -74,8 +74,8 @@ export class FormFinancialDetails extends Component {
                             aria-label="education"
                             name="education"
                             className={classes.group}
-                            value={value}
-                            onChange={handleChange}
+                            onChange={handleChange ('educationLevel')}
+                            defaultValue= {values.educationLevel}
                             >
                             <FormControlLabel
                                 value="master"
@@ -117,8 +117,8 @@ export class FormFinancialDetails extends Component {
                             aria-label="employment"
                             name="employmentStatus"
                             className={classes.group}
-                            value={value}
-                            onChange={handleChange}
+                            onChange={handleChange ('employmentStatus')}
+                            defaultValue= {values.employmentStatus}
                             >
                             <FormControlLabel
                                 value="employed"
@@ -146,11 +146,11 @@ export class FormFinancialDetails extends Component {
                         <FormLabel component="legend" className={classes.formLabel}>
                         What is your income range? </FormLabel>
                             <RadioGroup
-                            aria-label="incomeRange?"
-                            name="Income Range?"
+                            aria-label="incomeRange"
+                            name="incomeRange"
                             className={classes.group}
-                            value={value}
-                            onChange={handleChange}
+                            onChange={handleChange ('incomeRange')}
+                            defaultValue= {values.incomeRange}
                             >
                             <FormControlLabel
                                 value="Over150"
