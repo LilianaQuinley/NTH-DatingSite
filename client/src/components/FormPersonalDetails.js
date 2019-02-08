@@ -79,25 +79,25 @@ export class FormPersonalDetails extends Component {
 
                             >
                             <FormControlLabel
-                                value="neverMarried"
+                                value="Single (Never married)"
                                 control={<Radio color="primary" />}
                                 label="Single (Never married)"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="divorced"
+                                value="Divorced"
                                 control={<Radio color="primary" />}
                                 label="Divorced"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="separated"
+                                value="Separated"
                                 control={<Radio color="primary" />}
                                 label="Separated"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="complicated"
+                                value="It's Complicated"
                                 control={<Radio color="primary" />}
                                 label="It's Complicated"
                                 labelPlacement="start"
@@ -116,19 +116,19 @@ export class FormPersonalDetails extends Component {
                             defaultValue= {values.relationshipLooking}
                             >
                             <FormControlLabel
-                                value="casualDating"
+                                value="Casual Dating"
                                 control={<Radio color="primary" />}
                                 label="Casual Dating"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="longTerm"
+                                value="Long-Term Relationship"
                                 control={<Radio color="primary" />}
                                 label="Long-Term Relationship"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="marriage"
+                                value="Marriage"
                                 control={<Radio color="primary" />}
                                 label="Marriage"
                                 labelPlacement="start"
@@ -147,25 +147,25 @@ export class FormPersonalDetails extends Component {
                             defaultValue= {values.haveChildren}
                             >
                             <FormControlLabel
-                                value="noChildren"
+                                value="No"
                                 control={<Radio color="primary" />}
                                 label="No"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="yesAtHome"
+                                value="Yes (Living at home full time)"
                                 control={<Radio color="primary" />}
                                 label="Yes (Living at home full time)"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="yesPartTime"
+                                value="Yes (Living at home part time)"
                                 control={<Radio color="primary" />}
                                 label="Yes (Living at home part time)"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="yesNotAtHome"
+                                value="Yes (Not Living at home)"
                                 control={<Radio color="primary" />}
                                 label="Yes (Not Living at home)"
                                 labelPlacement="start"

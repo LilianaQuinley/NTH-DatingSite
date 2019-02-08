@@ -78,31 +78,31 @@ export class FormFinancialDetails extends Component {
                             defaultValue= {values.educationLevel}
                             >
                             <FormControlLabel
-                                value="master"
+                                value="Masters / Professional / Ph.D’s degree"
                                 control={<Radio color="primary" />}
                                 label="Masters / Professional / Ph.D’s degree"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="barchelorAssociate"
+                                value="Bachelorette / Associate’s degree"
                                 control={<Radio color="primary" />}
                                 label="Bachelorette / Associate’s degree"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="someCollege"
+                                value="Some College/Trade/technical/vocational training"
                                 control={<Radio color="primary" />}
                                 label="Some College/Trade/technical/vocational training"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="highSchool"
+                                value="High School"
                                 control={<Radio color="primary" />}
                                 label="High School"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="LessHighSchool"
+                                value="High Less than high school"
                                 control={<Radio color="primary" />}
                                 label="High Less than high school"
                                 labelPlacement="start"
@@ -121,19 +121,19 @@ export class FormFinancialDetails extends Component {
                             defaultValue= {values.employmentStatus}
                             >
                             <FormControlLabel
-                                value="employed"
+                                value="Employed"
                                 control={<Radio color="primary" />}
                                 label="Employed"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="selEmployed"
+                                value="Self-employed"
                                 control={<Radio color="primary" />}
                                 label="Self-employed"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="notWorking"
+                                value="Not Working"
                                 control={<Radio color="primary" />}
                                 label="Not Working"
                                 labelPlacement="start"
@@ -153,31 +153,31 @@ export class FormFinancialDetails extends Component {
                             defaultValue= {values.incomeRange}
                             >
                             <FormControlLabel
-                                value="Over150"
+                                value="Over $150,000"
                                 control={<Radio color="primary" />}
                                 label="Over $150,000"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="between100and150"
+                                value="Between $100,000 - $150,000"
                                 control={<Radio color="primary" />}
                                 label="$100,000 - $150,000"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="between50and100"
+                                value="Between $50,000 - $100,000"
                                 control={<Radio color="primary" />}
                                 label="$50,000 - $100,000"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="between25and50"
+                                value="Between $25,000 - $50,000"
                                 control={<Radio color="primary" />}
                                 label="$25,000 - $50,000"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="Under25"
+                                value="Under $25,000"
                                 control={<Radio color="primary" />}
                                 label="Under $25,000"
                                 labelPlacement="start"

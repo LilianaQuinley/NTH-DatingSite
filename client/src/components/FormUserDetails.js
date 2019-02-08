@@ -83,19 +83,19 @@ export class FormUserDetails extends Component {
                             className={classes.group}
                             >
                             <FormControlLabel
-                                value="female"
+                                value="Female"
                                 control={<Radio color="primary" />}
                                 label="Female"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="male"
+                                value="Male"
                                 control={<Radio color="primary" />}
                                 label="Male"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="other"
+                                value="Other"
                                 control={<Radio color="primary" />}
                                 label="Other"
                                 labelPlacement="start"
@@ -113,19 +113,19 @@ export class FormUserDetails extends Component {
                             className={classes.group}
                             >
                             <FormControlLabel
-                                value="female"
+                                value="Female"
                                 control={<Radio color="primary" />}
                                 label="Female"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="male"
+                                value="Male"
                                 control={<Radio color="primary" />}
                                 label="Male"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="other"
+                                value="Other"
                                 control={<Radio color="primary" />}
                                 label="Other"
                                 labelPlacement="start"
@@ -142,37 +142,37 @@ export class FormUserDetails extends Component {
                             className={classes.group}
                             >
                             <FormControlLabel
-                                value="white"
+                                value="White"
                                 control={<Radio color="primary" />}
                                 label="White"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="hispanic"
+                                value="Hispanic or Latino"
                                 control={<Radio color="primary" />}
                                 label="Hispanic or Latino"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="black"
+                                value="Black or African American"
                                 control={<Radio color="primary" />}
                                 label="Black or African American"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="nativeAmerican"
+                                value="Native American or American Indian"
                                 control={<Radio color="primary" />}
                                 label="Native American or American Indian"
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="asianPacific"
+                                value="Native Asian / Pacific Islander"
                                 control={<Radio color="primary" />}
                                 label="Native Asian / Pacific Islander "
                                 labelPlacement="start"
                             />
                              <FormControlLabel
-                                value="other"
+                                value="Other"
                                 control={<Radio color="primary" />}
                                 label="Other "
                                 labelPlacement="start"
