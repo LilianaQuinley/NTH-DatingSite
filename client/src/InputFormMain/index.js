@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import { Formik } from "formik";
 import { FormMain } from "./form";
-import Paper from "@material-ui/core/Paper";
 import * as Yup from "yup"
-import green from '@material-ui/core/colors/green';
-import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
-
 
 const validationSchema = Yup.object({
   firstName: Yup.string("Enter your First Name")
@@ -24,36 +19,6 @@ const validationSchema = Yup.object({
   .oneOf([Yup.ref("password")], "Password does not match")
 });
 
-
-
-const styles = theme => ({
-    paper: {
-      marginTop: theme.spacing.unit * 8,
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      padding: `${theme.spacing.unit * 5}px ${theme.spacing.unit * 5}px ${theme
-        .spacing.unit * 5}px`
-    },
-    container: {
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
-    textField: {
-      marginLeft: "100",
-      marginRight: "100",
-    }
-});
-
-const theme = createMuiTheme({
-  palette: {
-    primary: green,
-  },
-  typography: { useNextVariants: true },
-});
-
-
-
 class InputForm extends Component {
  constructor(props) {
    super(props);
@@ -68,11 +33,12 @@ class InputForm extends Component {
   email: "", confirmPassword: "", password: "" };
   return (
 <React.Fragment>
-    <div className={classes.container}>
-       
-        <h1>Sign UP </h1>
-        <h2>There is Nothing to Loose!</h2>
-      
+
+    <div >     
+        <h1 style={{ marginTop: 80, marginRight: 90}}>Sign UP !</h1>
+         <h2 style={{ marginRight: 90}}> There is Nothing to Loose! </h2>
+         
+  
         <Formik
             render={props => <FormMain {...props} toggleFun = {toggleFun} />}
             initialValues={values}
@@ -85,5 +51,4 @@ class InputForm extends Component {
 }
 }
 
-export default withStyles(styles)(InputForm);
-// export default indexForm;
+export default InputForm;

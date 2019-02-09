@@ -1,49 +1,10 @@
 
 import Button from "@material-ui/core/Button";
 import React from 'react';
-import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import green from '@material-ui/core/colors/green';
 import API from '../library/API';
 
-
-const styles = theme => ({
-  container: {
-    display: 'box',
-    flexWrap: 'wrap',
-    color: "red",
-    background: "red"
-  },
-  textField: {
-    marginLeft: "100",
-    marginRight: "100",
-  },
-});
-
-const mystyles = {
-  container: {
-    display: "box",
-    flexWrap: 'wrap',
-    color: "red",
-    background: "red"
-  },
-  textField: {
-    marginLeft: "1",
-    marginRight: "100",
-    background: "red"
-  },
-};
-
-const theme = createMuiTheme({
-  palette: {
-    primary: green,
-  },
-  typography: { useNextVariants: true },
-});
-
-
 export const FormMain = (props) => {
-  const { classes } = props;
   const {toggleFun} = props;
 
 
@@ -66,7 +27,7 @@ export const FormMain = (props) => {
 
 
   return (
-    <form noValidate autoComplete="off" onSubmit={(e) => {
+    <form style={{ marginTop: 10, width:500}} noValidate autoComplete="off" onSubmit={(e) => {
       e.preventDefault();
       const body = {lastName: lastName, firstName: firstName, email: email, password: password};
       API.createUser(body, () => {toggleFun ('registering', email)})
@@ -83,9 +44,10 @@ export const FormMain = (props) => {
         label="First Name"
         value={firstName}
         onChange={change.bind(null, "name")}
-        style={{ margin: 8, padding:8, width:200}}
-        variant="outlined"
+        style={{ padding:8, width:200}}
+        variant="standard"
       />
+   
       
       <TextField
         required
@@ -96,24 +58,25 @@ export const FormMain = (props) => {
         label="Last Name"
         value={lastName}
         onChange={change.bind(null, "name")}
-        style={{ margin: 8, padding:8, width:200}}
-        variant="outlined"
+        style={{ padding:8, width:200}}
+        variant="standard"
       />
     
      <TextField
        required
        id="outlined-full-width"
        name="email"
-       style={{ margin: 8, marginRight: 8,  padding:10}}
+       style={{ marginRight: 8,  padding:10}}
        helperText={touched.email ? errors.email : ""}
        error={touched.email && Boolean(errors.email)}
        label="Email"
        fullWidth
        value={email}
-       variant="outlined"
+       variant="standard"
        onChange={change.bind(null, "email")}
 
      />
+     <br/>
      <TextField
       required
        id="password"
@@ -121,8 +84,8 @@ export const FormMain = (props) => {
        helperText={touched.password ? errors.password : ""}
        error={touched.password && Boolean(errors.password)}
        label="Password"
-       style={{ margin: 8, padding:8, width:200}}
-       variant="outlined"
+       style={{padding:8, width:200}}
+       variant="standard"
        type="password"
        value={password}
        onChange={change.bind(null, "password")}
@@ -135,8 +98,8 @@ export const FormMain = (props) => {
        helperText={touched.confirmPassword ? errors.confirmPassword : ""}
        error={touched.confirmPassword && Boolean(errors.confirmPassword)}
        label="Confirm Password"
-       style={{ margin: 8, padding:8, width:200}}
-       variant="outlined"
+       style={{ padding:8, width:200}}
+       variant="standard"
        type="password"
        value={confirmPassword}
        onChange={change.bind(null, "confirmPassword")}
@@ -146,6 +109,7 @@ export const FormMain = (props) => {
        type="submit" 
        variant="raised"
        color="primary"
+       style={{ marginTop: 25, padding:10}}
        disabled={!isValid}
      >
        Submit

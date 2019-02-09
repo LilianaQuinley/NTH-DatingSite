@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Paper from "@material-ui/core/Paper";
 import PropTypes from 'prop-types';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -39,13 +38,12 @@ function LeftPane(props) {
 }
 
 const styles = {    
-    // Paper : {
-    //     padding: 20, margin: 50
-    // },   
+  
     card: {
         width: 400,
         height: 200,
-        backgroundColor: 'transparent',       
+        backgroundColor: 'transparent', 
+        marginLeft: 100      
        },
     
     media: {

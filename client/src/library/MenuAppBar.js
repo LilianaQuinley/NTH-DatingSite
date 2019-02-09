@@ -26,8 +26,11 @@ const styles = theme => ( {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     marginTop: theme.spacing.unit,
-    height:30,
+    height: 25,
     background: white,
+    padding: 10,
+    width:200,
+
   },
 });
 
@@ -48,7 +51,9 @@ function MenuAppBar (props) {
               id="login-email"
               label="Email Address"
               className={classes.textField}
-              autoComplete="email"    
+              autoComplete="email"  
+              margin="normal"
+              variant="outlined"
               // value={values.name}
               // onChange={handleChange('name')}
             
@@ -59,6 +64,8 @@ function MenuAppBar (props) {
               className={classes.textField}
               type="password"
               autoComplete="current-password"
+              margin="normal"
+              variant="outlined"
               
             />
             <Button color="inherit" onClick={() => { alert("Clicked!"); }}>Login</Button>

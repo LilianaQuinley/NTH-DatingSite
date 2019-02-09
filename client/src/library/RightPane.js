@@ -9,9 +9,9 @@ export class RightPane extends Component {
 
     return (
       
-     < Paper style = {styles.Paper}>
+    //  < Paper style = {styles.Paper}>
         <InputFormMain  toggleFun = {toggleFun}/>  
-     </Paper>
+    //  </Paper>
      
     )
   }
@@ -19,7 +19,8 @@ export class RightPane extends Component {
 const styles = {
     Paper : {
     padding: 20,
-    margin: 50,
+    marginTop: '50px',
+
     backgroundColor: 'transparent'
     },
 

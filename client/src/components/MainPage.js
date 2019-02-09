@@ -28,7 +28,6 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     alignItems: "center",
-    marginLeft : 50,
     color: "red"
   },
    
