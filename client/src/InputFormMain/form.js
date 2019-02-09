@@ -1,12 +1,10 @@
-// import React from "react";
+
 import Button from "@material-ui/core/Button";
-// import TextField from "@material-ui/core/TextField";
-
-
 import React from 'react';
 import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import green from '@material-ui/core/colors/green';
+import API from '../library/API';
 
 
 const styles = theme => ({
@@ -70,7 +68,9 @@ export const FormMain = (props) => {
   return (
     <form noValidate autoComplete="off" onSubmit={(e) => {
       e.preventDefault();
-      toggleFun ('registering')
+      const body = {lastName: lastName, firstName: firstName, email: email, password: password};
+      API.createUser(body, () => {toggleFun ('registering')})
+      
       //go to Step 1
     }}>
      

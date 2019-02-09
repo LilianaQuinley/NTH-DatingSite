@@ -34,8 +34,8 @@ module.exports = app => {
         console.log("Create the user.")
         //console.log(req);
         //console.log(res);
-        console.log(req.body.values);
-        DB.User.create(req.body.values)
+        console.log(req.body);
+        DB.User.create(req.body)
             .then(dbModel => res.json(dbModel))
             .catch(err => {
                 console.log("Goty an error");

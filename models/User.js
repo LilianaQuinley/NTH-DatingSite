@@ -1,8 +1,6 @@
 const mongoose = require ('mongoose');
 const Schema = mongoose.Schema;
 
-
-
 const userSchema =  new Schema ({
     firstName: {
         type: String,
@@ -19,28 +17,7 @@ const userSchema =  new Schema ({
         unique: true,
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
       },
-
-    occupation:{
-        type: String,
-        require:[ true, 'Occupation is empty']
  
-    },
-    city:{
-        type: String,
-        require:[ true, 'City is empty'],
-
-    },
-    bio:{
-        type: String,
-        require:[ true,' Introduce yourself']
-     
-    },
-    userName: {
-        type: String,
-        trim: true,
-        required: "Username is Required"
-    },
-    
     password: {
         type: String,
         trim: true,

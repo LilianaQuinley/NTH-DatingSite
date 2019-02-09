@@ -12,7 +12,7 @@ import InputFormMain from './InputFormMain';
 class App extends Component {
   constructor (props) {
     super (props);
-    this.state = {userState : "registering"}
+    this.state = {userState : "nonuser"}
   }
 
   toggleFun = (stateS) => {

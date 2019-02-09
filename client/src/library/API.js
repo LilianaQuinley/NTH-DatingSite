@@ -5,12 +5,13 @@ const API = {
         return axios.get('/api/users');
     },
 
-    createUser: function (body) {
+    createUser: function (body, sucess) {
         console.log("Call the post")
-        return axios.post('/api/createUser' , body)
+        return axios.post('/api/createUser', body)
         .then(function (response) {
             console.log("Log my response");
             console.log(response);
+            sucess();
           })
           .catch(function (error) {
               console.log("Log my error.")
