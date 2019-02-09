@@ -49,9 +49,13 @@ export class FormFinancialDetails extends Component {
         return (     
             <MuiThemeProvider muiTheme={muiTheme}>
                 <React.Fragment>
-                    <AppBar 
+                <AppBar 
                         position="sticky"
-                        title= "Financial Details"/>
+                        title= " Financial Details">
+                         <div style = {{color:"white"}}>
+                         {values.email}
+                         </div>
+                </AppBar>
 
                     <form className={classes.container} noValidate>
 

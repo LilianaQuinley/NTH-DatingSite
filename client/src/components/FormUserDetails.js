@@ -44,7 +44,14 @@ export class FormUserDetails extends Component {
                 <React.Fragment>
                     <AppBar 
                         position="sticky"
-                        title= " User Details"/>
+                        title= " User Details">
+                         <div style = {{color:"white"}}>
+                         {values.email}
+                         </div>
+                        </AppBar>
+                       
+
+
 
                     <form className={classes.container} noValidate>
 

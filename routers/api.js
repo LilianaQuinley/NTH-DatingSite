@@ -44,6 +44,19 @@ module.exports = app => {
             });
     })
 
+    app.post('/api/createUserProfile', (req, res) => {
+        console.log("Create the user Profile.")
+    
+        console.log(req.body);
+        DB.UserProfile.create(req.body)
+            .then(dbModel => res.json(dbModel))
+            .catch(err => {
+                console.log("Got  an error saving using profile");
+                console.log(err);
+                res.status(422).json(err);
+            });
+    })
+
 
 
 }

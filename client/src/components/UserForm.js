@@ -21,6 +21,7 @@ export class UserForm extends Component {
         educationLevel : '',
         employmentStatus: '',
         incomeRange: '',
+        email: this.props.email
     }
 
     // proceede to next step:
@@ -51,9 +52,9 @@ export class UserForm extends Component {
   render() {
     const { step } = this.state;
     const { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking, haveChildren,
-    educationLevel, employmentStatus, incomeRange} = this.state; 
+    educationLevel, employmentStatus, incomeRange, email} = this.state; 
     const values = { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking, haveChildren,
-        educationLevel, employmentStatus, incomeRange }
+        educationLevel, employmentStatus, incomeRange, email }
     
     switch (step) {
         case 1: 

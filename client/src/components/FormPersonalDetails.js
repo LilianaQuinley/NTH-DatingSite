@@ -49,9 +49,13 @@ export class FormPersonalDetails extends Component {
         return (     
             <MuiThemeProvider muiTheme={muiTheme}>
                 <React.Fragment>
-                    <AppBar 
-                        position="sticky"
-                        title= "Personal Details"/>
+                <AppBar 
+                    position="sticky"
+                    title= " Personal Details">
+                        <div style = {{color:"white"}}>
+                        {values.email}
+                        </div>
+                </AppBar>
 
                     <form className={classes.container} noValidate>
 

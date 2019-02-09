@@ -18,9 +18,9 @@ export class Confirm extends Component {
         e.preventDefault();
         console.log("Save the user");
         console.log(this.props)
-        api.createUser(this.props)
-        // PROCESS FORM //
-        this.props.nextStep ();
+        api.createUserProfile(this.props.values, () => {this.props.nextStep()})
+        //PROCESS FORM //
+        
     };
 
     back = e => {
@@ -31,7 +31,7 @@ export class Confirm extends Component {
     render() {
     const {classes} = this.props
     const { values : { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking,
-        haveChildren, educationLevel, employmentStatus, incomeRange } } = this.props;
+        haveChildren, educationLevel, employmentStatus, incomeRange, email } } = this.props;
 
     const muiTheme = getMuiTheme({
         
@@ -47,8 +47,13 @@ export class Confirm extends Component {
     return (
         <MuiThemeProvider muiTheme={muiTheme}>
             <React.Fragment>
-                <AppBar 
-                        title= "Personal Details"/>
+            <AppBar 
+                position="sticky"
+                title= " Confirmation ">
+                    <div style = {{color:"white"}}>
+                    {email}
+                    </div>
+            </AppBar>
                 <List>
 
                     <ListItem

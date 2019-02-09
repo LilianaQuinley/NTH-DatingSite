@@ -8,6 +8,7 @@ import MenuAppBar from "./library/MenuAppBar";
 import Footer  from "./library/Footer";
 import MainPage from "./components/MainPage";
 import InputFormMain from './InputFormMain';
+import ProfilePage from "./components/ProfilePage";
 
 class App extends Component {
   constructor (props) {
@@ -15,8 +16,8 @@ class App extends Component {
     this.state = {userState : "nonuser"}
   }
 
-  toggleFun = (stateS) => {
-    this.setState({userState : stateS})   
+  toggleFun = (stateS, email) => {
+    this.setState({userState : stateS, email: email})   
   }
 
   render() {
@@ -24,7 +25,7 @@ class App extends Component {
     if(this.state.userState == "registering") {
       return (
         <div className = "App">
-          <UserForm />
+          <UserForm email={this.state.email}/>
           <Footer />
         </div>
       )}
@@ -34,8 +35,15 @@ class App extends Component {
           <MenuAppBar />
           <MainPage toggleFun ={this.toggleFun} />
         </div>
-      )
-    }
+      )}
+      else if (this.state.userState == "profile"){
+        return (
+        <div className = "App">
+          <ProfilePage />
+        </div>
+      )}
+
+      
   }
 }
   

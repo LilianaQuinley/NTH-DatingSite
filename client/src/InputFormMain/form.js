@@ -69,7 +69,7 @@ export const FormMain = (props) => {
     <form noValidate autoComplete="off" onSubmit={(e) => {
       e.preventDefault();
       const body = {lastName: lastName, firstName: firstName, email: email, password: password};
-      API.createUser(body, () => {toggleFun ('registering')})
+      API.createUser(body, () => {toggleFun ('registering', email)})
       
       //go to Step 1
     }}>
