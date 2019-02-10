@@ -16,7 +16,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
-
+import Picture from "../Assets/Images/beach.jpeg"
 
 
 
@@ -54,6 +54,9 @@ const styles = theme => ({
     mainGrid: {
       marginTop: theme.spacing.unit * 3,
     },
+
+
+    //////////////////////////
     card: {
       minWidth: 275,
     },
@@ -68,6 +71,9 @@ const styles = theme => ({
       margin: '0 2px',
       transform: 'scale(0.8)',
     },
+
+    
+    //////////////////////////
 
     cardDetails: {
       flex: 1,
@@ -98,7 +104,8 @@ const styles = theme => ({
   function ProfileOnePane(props) {
     const { classes } = props;
     const bull = <span className={classes.bullet}>•</span>;
-  
+
+    
     return (
       <React.Fragment>
         <CssBaseline />
@@ -109,51 +116,88 @@ const styles = theme => ({
       <Divider />
           <Paper className={classes.mainFeaturedPost}>
             <Grid container>
-              <Grid item md={6}>
-
-
-
+              <Grid item md={8}>
               <div className={classes.mainFeaturedPostContent}>
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                    Title of a longer featured blog post
+                    My Profile
                   </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
-                    Multiple lines of text that form the lede, informing new readers quickly and
-                    efficiently about what&apos;s most interesting in this post&apos;s contents…
-                  </Typography>
+                    Multiple lines 
+                    </Typography>
+                          <Card className={classes.card}>
+                              <div className={classes.details}>
+                                <CardContent className={classes.content}>
+
+                                <CardMedia
+                                    component="img"
+                                    alt="Contemplative Reptile"
+
+                                    height=""
+                                    image= { Picture }
+                                    title="Contemplative Reptile"
+                                  />
+                                  <Typography component="h5" variant="h5">
+                                    Live From Space
+                                  </Typography>
+                                  <Typography variant="subtitle1" color="textSecondary">
+                                    Mac Miller
+                                  </Typography>
+                                </CardContent>
+                              </div>
+                           </Card>
+                           <br/>
+                           <Divider />
+                           
+          
+                           <Card className={classes.card}>
+                              <div className={classes.details}>
+                                <CardContent className={classes.content}>
+                                  <Grid container>
+                                  <Typography component="h5" variant="h5">
+                                      ABOUT ME
+                                      </Typography>
+                                    
+                                    <Grid item md={4}>
+                                      <Typography component="h5" variant="h5">
+                                      I like .....
+                                      </Typography>
+                                      <Typography variant="subtitle1" color="textSecondary">
+                                        Mac Miller
+                                      </Typography>
+                                    </Grid>
+                                    <Grid item md={4}>
+                                      <Typography component="h5" variant="h5">
+                                      I like .....
+                                      </Typography>
+                                      <Typography variant="subtitle1" color="textSecondary">
+                                        Mac Miller
+                                      </Typography>
+                                    </Grid>
+                                    <Grid item md={4}>
+                                      <Typography component="h5" variant="h5">
+                                      I like .....
+                                      </Typography>
+                                      <Typography variant="subtitle1" color="textSecondary">
+                                        Mac Miller
+                                      </Typography>
+                                    </Grid>
+
+                                  </Grid>
+                                
+                                </CardContent>
+                              </div>
+                           </Card>
+
+
+
                 </div>
 
-                <Card className={classes.card}>
-                  <CardContent>
-                    <Typography className={classes.title} color="textSecondary" gutterBottom>
-                      Word of the Day
-                    </Typography>
-                    <Typography variant="h5" component="h2">
-                      be
-                      {bull}
-                      nev
-                      {bull}o{bull}
-                      lent
-                    </Typography>
-                    <Typography className={classes.pos} color="textSecondary">
-                      adjective
-                    </Typography>
-                    <Typography component="p">
-                      well meaning and kindly.
-                      <br />
-                      {'"a benevolent smile"'}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small">Learn More</Button>
-                  </CardActions>
-                </Card>
 
 
               </Grid>
 
 
-              <Grid item md={6}>
+              <Grid item md={4}>
                 <div className={classes.mainFeaturedPostContent}>
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
                    PANEL NUMBER 2
