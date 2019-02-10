@@ -29,7 +29,24 @@ const API = {
           })
           .catch(function (error) {
               console.log("Log my error.")
-            console.log(error.response.data);
+            console.log(error);
+          });
+      },
+
+      login: function (body, sucess, failure) {
+          console.log("Login this person")
+        return axios.post('/api/login', body)
+        .then(function (response) {
+            if (response.data.result == "goodlogin") {
+                 sucess();        
+            }
+            else {
+                failure ();
+            }
+          })
+          .catch(function (error) {
+              console.log("Log my error.")
+            console.log(error);
           });
       }
 };

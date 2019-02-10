@@ -57,6 +57,24 @@ module.exports = app => {
             });
     })
 
+    app.post('/api/login', (req, res) => {
+        console.log("login the user")
+        const body = req.body;
+        console.log(body);
 
+        DB.User.find ({email: body.email, password: body.password}, function (err, results) {
+            if (!err) {
+                if (results.length == 0 ){
+                    return res.send ({result: "badlogin"});                    
+                }
+                else {
+                    return res.send ({result:"goodlogin"})
+                }
+            }
+            else {
+                return res.send(err)
+            }
+        });        
+    });
 
 }

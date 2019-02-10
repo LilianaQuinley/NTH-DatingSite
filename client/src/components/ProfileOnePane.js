@@ -18,6 +18,14 @@ import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import Picture from "../Assets/Images/beach.jpeg"
 
+//////PANE #2
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+
 
 
 const styles = theme => ({
@@ -58,7 +66,7 @@ const styles = theme => ({
 
     //////////////////////////
     card: {
-      minWidth: 275,
+      display: "flex"
     },
     bullet: {
       display: 'inline-block',
@@ -108,21 +116,18 @@ const styles = theme => ({
     
     return (
       <React.Fragment>
-        <CssBaseline />
+     
         <div className={classes.layout}>
               <Typography variant="h6" gutterBottom>
-      From the Firehose
-      </Typography>
-      <Divider />
+              NTH - Relleno
+              </Typography>
+
           <Paper className={classes.mainFeaturedPost}>
             <Grid container>
               <Grid item md={8}>
               <div className={classes.mainFeaturedPostContent}>
-                  <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                    My Profile
-                  </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
-                    Multiple lines 
+                    My Profile
                     </Typography>
                           <Card className={classes.card}>
                               <div className={classes.details}>
@@ -130,17 +135,16 @@ const styles = theme => ({
 
                                 <CardMedia
                                     component="img"
-                                    alt="Contemplative Reptile"
-
+                                    alt="Use Picture"
                                     height=""
                                     image= { Picture }
-                                    title="Contemplative Reptile"
+                                    title="UserPicture"
                                   />
                                   <Typography component="h5" variant="h5">
-                                    Live From Space
+                                    "Your Nickname"
                                   </Typography>
                                   <Typography variant="subtitle1" color="textSecondary">
-                                    Mac Miller
+                                    "Your Email"
                                   </Typography>
                                 </CardContent>
                               </div>
@@ -152,64 +156,118 @@ const styles = theme => ({
                            <Card className={classes.card}>
                               <div className={classes.details}>
                                 <CardContent className={classes.content}>
-                                  <Grid container>
                                   <Typography component="h5" variant="h5">
                                       ABOUT ME
                                       </Typography>
-                                    
-                                    <Grid item md={4}>
-                                      <Typography component="h5" variant="h5">
-                                      I like .....
-                                      </Typography>
-                                      <Typography variant="subtitle1" color="textSecondary">
-                                        Mac Miller
-                                      </Typography>
-                                    </Grid>
-                                    <Grid item md={4}>
-                                      <Typography component="h5" variant="h5">
-                                      I like .....
-                                      </Typography>
-                                      <Typography variant="subtitle1" color="textSecondary">
-                                        Mac Miller
-                                      </Typography>
-                                    </Grid>
-                                    <Grid item md={4}>
-                                      <Typography component="h5" variant="h5">
-                                      I like .....
-                                      </Typography>
-                                      <Typography variant="subtitle1" color="textSecondary">
-                                        Mac Miller
-                                      </Typography>
-                                    </Grid>
+                                    <br/>
+        {/* const { values : { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking,
+        haveChildren, educationLevel, employmentStatus, incomeRange, email
 
+
+ */}
+
+                                    <Grid container>
+                                      <Grid item md={6}>
+                                        <Typography component="h6" variant="h6">
+                                        I am Looking For ....
+                                        </Typography>
+                                        <Typography variant="subtitle1" color="textSecondary">
+                                          "Female, men, both"
+                                        </Typography>
+                                      </Grid>
+                                      <Grid item md={6}>
+                                        <Typography component="h6" variant="h6">
+                                        My Relationship Status is.....
+                                        </Typography>
+                                        <Typography variant="subtitle1" color="textSecondary">
+                                          "Divorce, Single.."
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                        <Typography component="h6" variant="h6">
+                                        I an interested on ....
+                                        </Typography>
+                                        <Typography variant="subtitle1" color="textSecondary">
+                                        "RelationShip that I am looking for"
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                        <Typography component="h6" variant="h6">
+                                        I have children .....
+                                        </Typography>
+                                        <Typography variant="subtitle1" color="textSecondary">
+                                          "Yes / No"
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                        <Typography component="h6" variant="h6">
+                                        My education level is .....
+                                        </Typography>
+                                        <Typography variant="subtitle1" color="textSecondary">
+                                          "High School, PHD"
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                      <Typography component="h6" variant="h6">
+                                      My am currently .....
+                                      </Typography>
+                                      <Typography variant="subtitle1" color="textSecondary">
+                                        "employee, looking for job"
+                                      </Typography>
+                                    </Grid>
+  
                                   </Grid>
                                 
                                 </CardContent>
                               </div>
                            </Card>
-
-
-
                 </div>
-
-
-
               </Grid>
 
 
               <Grid item md={4}>
                 <div className={classes.mainFeaturedPostContent}>
-                  <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                   PANEL NUMBER 2
-                  </Typography>
-                  <Typography variant="h5" color="inherit" paragraph>
-                    Multiple lines of text that form the lede, informing new readers quickly and
-                    efficiently about what&apos;s most interesting in this post&apos;s contents…
-                  </Typography>
+                  <Card className={classes.card} >
+                      <div className={classes.details}>
+                          <CardContent className={classes.content}>
+                              <Typography variant="h5" color="inherit" paragraph>
+                                Profile Status
+                              </Typography>
+                            <FormControl component="fieldset" className={classes.formControl}>
+                                  <RadioGroup
+                                  aria-label="Profile Status"
+                                  name="profileStatus"
+                                  className={classes.group}
+                                  // onChange={handleChange ('relationshipStatus')}
+                                  // defaultValue= {values.relationshipStatus}
+
+                                  >
+                                  <FormControlLabel
+                                      value="Visible"
+                                      control={<Radio color="primary" />}
+                                      label="Anyone can see you"
+                                      labelPlacement="start"
+                                  />
+                                  <FormControlLabel
+                                      value="Invisible"
+                                      control={<Radio color="primary" />}
+                                      label="No one can see you"
+                                      labelPlacement="start"
+                                  />
+                                  <FormControlLabel
+                                      value="ChooseViewYou"
+                                      control={<Radio color="primary" />}
+                                      label="Choose who sees you"
+                                      labelPlacement="start"
+                                  /> 
+                              </RadioGroup>              
+                            </FormControl>
+                          </CardContent>
+                      </div>
+                  </Card>
+                  
                 </div>
               </Grid>
-
-
             </Grid>
           </Paper>
 

@@ -13,7 +13,7 @@ import ProfilePage from "./components/ProfilePage";
 class App extends Component {
   constructor (props) {
     super (props);
-    this.state = {userState : "profile"}
+    this.state = {userState : "nonuser"}
   }
 
   toggleFun = (stateS, email) => {
@@ -25,14 +25,14 @@ class App extends Component {
     if(this.state.userState == "registering") {
       return (
         <div className = "App">
-          <UserForm email={this.state.email}/>
+          <UserForm email={this.state.email} toggleFun ={this.toggleFun}/>
           <Footer />
         </div>
       )}
       else if (this.state.userState == "nonuser"){
         return (
         <div className = "App">
-          <MenuAppBar />
+          <MenuAppBar toggleFun ={this.toggleFun}/>
           <MainPage toggleFun ={this.toggleFun} />
         </div>
       )}

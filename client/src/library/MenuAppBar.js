@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import TextField from '@material-ui/core/TextField';
 import { white } from 'material-ui/styles/colors';
+import API from "./API";
 
 
 const styles = theme => ( {
@@ -37,6 +38,24 @@ const styles = theme => ( {
 
 function MenuAppBar (props) {
   const { classes } = props;
+  const toggleFun = props.toggleFun;
+  
+  let password = "";
+  let email = "";
+
+  const handleClick = () => {
+    const body = {email: email, password: password}
+    API.login (body, () => toggleFun ('profile'), () => alert ("Incorrect username / password"))
+  };
+
+  const handleChangePW = e => {
+    password = e.target.value;
+  };
+
+  const handleChangeEmail = e => {
+    email = e.target.value;
+  };
+
   return (
     <div className={classes.root}>
       <AppBar position="fixed">
@@ -55,7 +74,7 @@ function MenuAppBar (props) {
               margin="normal"
               variant="outlined"
               // value={values.name}
-              // onChange={handleChange('name')}
+              onChange={handleChangeEmail}
             
             />
             <TextField
@@ -66,9 +85,10 @@ function MenuAppBar (props) {
               autoComplete="current-password"
               margin="normal"
               variant="outlined"
+              onChange={handleChangePW}
               
             />
-            <Button color="inherit" onClick={() => { alert("Clicked!"); }}>Login</Button>
+            <Button color="inherit" onClick={() => { handleClick() }}>Login</Button>
             
         </Toolbar>
       </AppBar>

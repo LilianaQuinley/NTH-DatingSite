@@ -18,7 +18,7 @@ export class Confirm extends Component {
         e.preventDefault();
         console.log("Save the user");
         console.log(this.props)
-        api.createUserProfile(this.props.values, () => {this.props.nextStep()})
+        api.createUserProfile(this.props.values, () => {this.props.toggleFun('profile')})
         //PROCESS FORM //
         
     };

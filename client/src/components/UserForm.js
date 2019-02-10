@@ -51,6 +51,7 @@ export class UserForm extends Component {
 
   render() {
     const { step } = this.state;
+    const {toggleFun} = this.props;
     const { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking, haveChildren,
     educationLevel, employmentStatus, incomeRange, email} = this.state; 
     const values = { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking, haveChildren,
@@ -89,6 +90,7 @@ export class UserForm extends Component {
                 nextStep={this.nextStep}
                 prevStep={this.prevStep}
                 values={values}
+                toggleFun = {toggleFun}
                 />
         )
         
