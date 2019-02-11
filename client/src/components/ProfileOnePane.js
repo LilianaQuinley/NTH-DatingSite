@@ -77,9 +77,12 @@ const styles = theme => ({
 
   function ProfileOnePane(props) {
     const { classes } = props;
+    console.log("this is props")
+    console.log(props)
+    const profile = props.profile;
 
-    // const { values : { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking,
-    //   haveChildren, educationLevel, employmentStatus, incomeRange, email } } = this.props;
+    const  { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking,
+      haveChildren, educationLevel, employmentStatus, incomeRange, email } = profile;
 
 
     return (
@@ -141,7 +144,7 @@ const styles = theme => ({
                                     id="outlined-full-width"
                                     label="Gender & Age"
                                     //style={{ margin: 8 }}
-                                   // defaultValue= {gender}
+                                   defaultValue= {gender}
                                     placeholder= "Female 35 years old.."
                                     fullWidth
                                     margin="normal"
@@ -155,7 +158,7 @@ const styles = theme => ({
                                     label="Ethnic"
                                     //style={{ margin: 8 }}
                                     placeholder="Caucasian"
-                                    //defaultValue= {ethnic}
+                                    defaultValue= {ethnic}
                                     fullWidth
                                     margin="normal"
                                     variant="outlined"

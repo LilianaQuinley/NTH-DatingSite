@@ -16,8 +16,16 @@ class App extends Component {
     this.state = {userState : "nonuser"}
   }
 
-  toggleFun = (stateS, email) => {
-    this.setState({userState : stateS, email: email})   
+  toggleFun = (stateS, email, profile) => {
+    console.log("profile from app");
+    console.log(profile);
+
+    if (profile) {
+      
+      this.setState ({userState : stateS, email: email, profile: profile});
+    }else {
+          this.setState({userState : stateS, email: email})  
+    }
   }
 
   render() {
@@ -39,7 +47,7 @@ class App extends Component {
       else if (this.state.userState == "profile"){
         return (
         <div className = "App">
-          <ProfilePage />
+          <ProfilePage profile = {this.state.profile}/>
         </div>
       )}
 
