@@ -59,13 +59,10 @@ const styles = theme => ({
   footerCard: {
     boxShadow: 'rgba(255, 0, 0, 0.117647) 0px 1px 6px, rgba(255, 0, 0, 0.117647) 0px 1px 4px',
   },
-
-  profileStatusCard: {
+  specialBorderCard:{
     margin: 25 ,
-    borderColor: "black",
     boxShadow: 'rgba(255, 0, 0, 0.117647) 0px 1px 6px, rgba(255, 0, 0, 0.117647) 0px 1px 4px',
     display: "relative"
-
   },
 
   footer: {
@@ -93,31 +90,93 @@ const styles = theme => ({
           <Paper className={classes.mainFeaturedPost}>
             <Grid container>
               <Grid item md={8}>
-              <div className={classes.mainFeaturedPostContent}>
-                  <Typography variant="h5" color="inherit" paragraph>
+                <div className={classes.mainFeaturedPostContent}>
+                    <Typography variant="h5" color="inherit" paragraph>
                     My Profile
                     </Typography>
-                          <Card className={classes.card}>
-                              <div >
-                                <CardContent>
-                                  <CardMedia
-                                      component="img"
-                                      alt="Use Picture"
-                                      height=""
-                                      image= { Picture }
-                                      title="UserPicture"
-                                    />
-                                    <Typography component="h5" variant="h5">
-                                      "Your Nickname"
-                                    </Typography>
-                                    <Typography variant="subtitle1" color="textSecondary">
-                                      "Your Email"
-                                    </Typography>
-                                </CardContent>
-                              </div>
-                           </Card>
-                           <br/>
+                      
+      {/* Profile Image CARD  */}
+      <Grid container className={classes.root} spacing={16}>
 
+                      <Grid item sm={4}>   
+                        <Card className={classes.card}>
+                            <div >
+                              <CardContent>
+                                <CardMedia
+                                    component="img"
+                                    alt="Use Picture"
+                                    height=""
+                                    image= { Picture }
+                                    title="UserPicture"
+                                  />
+                                  <Typography variant="subtitle1" color="textSecondary">
+                                    "Value Member since May 2019"
+                                  </Typography>
+                              </CardContent>
+                            </div>
+                          </Card>
+                      </Grid>
+                      
+           {/* ////////AGE CARD       */}
+                      <Grid item sm={8}>   
+                        <Card className={classes.card}>
+                            <div >
+                              <CardContent>
+                              <TextField
+                                    id="outlined-full-width"
+                                    label="Name"
+                                    //style={{ margin: 8 }}
+                                    placeholder="Nickname"
+                                    fullWidth
+                                    margin="normal"
+                                    variant="outlined"
+                                    InputLabelProps={{
+                                      shrink: true,
+                                    }}
+                                  />
+                              <TextField
+                                    id="outlined-full-width"
+                                    label="Gender & Age"
+                                    //style={{ margin: 8 }}
+                                    placeholder= "Female 35 years old.."
+                                    fullWidth
+                                    margin="normal"
+                                    variant="outlined"
+                                    InputLabelProps={{
+                                      shrink: true,
+                                    }}
+                                  />
+                              <TextField
+                                    id="outlined-full-width"
+                                    label="Ethic"
+                                    //style={{ margin: 8 }}
+                                    placeholder="Caucasian"
+                                    fullWidth
+                                    margin="normal"
+                                    variant="outlined"
+                                    InputLabelProps={{
+                                      shrink: true,
+                                    }}
+                                  />
+                              <TextField
+                                    id="outlined-full-width"
+                                    label="Interested"
+                                    //style={{ margin: 8 }}
+                                    placeholder="Seeking men 44 - 58 within 50 miles"
+                                    fullWidth
+                                    margin="normal"
+                                    variant="outlined"
+                                    InputLabelProps={{
+                                      shrink: true,
+                                    }}
+                                  />
+                              </CardContent>
+                            </div>
+                          </Card>
+                      </Grid>
+      </Grid>
+      <br/>
+      {/* /////BIO CARD */}
                            <Card className={classes.BioCard}>
                               <div >
                                 <CardContent >
@@ -126,7 +185,7 @@ const styles = theme => ({
                                     label="Bio"
                                     //style={{ margin: 8 }}
                                     placeholder="I am fun, energetic, animal lover.."
-                                    helperText="Special Instructions!"
+                                    //helperText="Special Instructions!"
                                     fullWidth
                                     margin="normal"
                                     variant="outlined"
@@ -138,23 +197,34 @@ const styles = theme => ({
                               </div>
                            </Card>
                            <br />
-                           
-          
-                           <Card className={classes.card}>
-                              <div >
+     {/* /////My Pictures Card */}
+                          <Card className={classes.card}>
+                            <div className={classes.specialBorderCard}>
+                              <CardContent>
+                                <CardMedia
+                                    component="img"
+                                    alt="Use Picture"
+                                    height=""
+                                    image= { Picture }
+                                    title="UserPicture"
+                                  />
+                                  <Typography variant="subtitle1" color="textSecondary">
+                                    "Something about this picture"
+                                  </Typography>
+                                  
+                              </CardContent>
+                            </div>
+                          </Card>
+                           <br />
+
+      {/* /////ABOUT ME CARD */}
+                          <Card className={classes.card}>
+                              <div className={classes.specialBorderCard}>
                                 <CardContent >
                                   <Typography component="h5" variant="h5">
                                       ABOUT ME
                                       </Typography>
                                     <br/>
-
-
-
-        {/* const { values : { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking,
-        haveChildren, educationLevel, employmentStatus, incomeRange, email
-
-
- */}
 
                                     <Grid container>
                                       <Grid item md={6}>
@@ -211,16 +281,130 @@ const styles = theme => ({
                                 </CardContent>
                               </div>
                            </Card>
+      {/* /////END ABOUT ME CARD */}
+
+
+
+
+    {/* /////MORE CARD */}
+                                 <Card className={classes.BioCard}>
+                              <div >
+                                <CardContent >
+                                <TextField
+                                    id="outlined-full-width"
+                                    label="A little More About Me"
+                                    //style={{ margin: 8 }}
+                                    placeholder=" Favorite things, Favorite pet, Religious.."
+                                    fullWidth
+                                    margin="normal"
+                                    variant="outlined"
+                                    InputLabelProps={{
+                                      shrink: true,
+                                    }}
+                                  />
+                                </CardContent>
+                              </div>
+                           </Card>
+                           <br />
+    {/* /////What I like to do in free time CARD */}
+                                 <Card className={classes.BioCard}>
+                              <div >
+                                <CardContent >
+                                <TextField
+                                    id="outlined-full-width"
+                                    label="What I like to do in my free time"
+                                    //style={{ margin: 8 }}
+                                    placeholder="Sports, Gym, Hiking .."
+                                    fullWidth
+                                    margin="normal"
+                                    variant="outlined"
+                                    InputLabelProps={{
+                                      shrink: true,
+                                    }}
+                                  />
+                                </CardContent>
+                              </div>
+                           </Card>
+                           <br />
+                           
+      {/* /////I AM LOOKING FOR CARD */}
+                           <Card className={classes.card}>
+                              <div className={classes.specialBorderCard}>
+                                <CardContent >
+                                  <Typography component="h5" variant="h5">
+                                      I AM LOOKING FOR..
+                                      </Typography>
+                                    <br/>
+
+                                    <Grid container>
+                                      <Grid item md={6}>
+                                        <Typography component="h6" variant="h6">
+                                        I am Looking For ....
+                                        </Typography>
+                                        <Typography variant="subtitle1" color="textSecondary">
+                                          "Female, men, both"
+                                        </Typography>
+                                      </Grid>
+                                      <Grid item md={6}>
+                                        <Typography component="h6" variant="h6">
+                                        My Relationship Status is.....
+                                        </Typography>
+                                        <Typography variant="subtitle1" color="textSecondary">
+                                          "Divorce, Single.."
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                        <Typography component="h6" variant="h6">
+                                        I an interested on ....
+                                        </Typography>
+                                        <Typography variant="subtitle1" color="textSecondary">
+                                        "RelationShip that I am looking for"
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                        <Typography component="h6" variant="h6">
+                                        I have children .....
+                                        </Typography>
+                                        <Typography variant="subtitle1" color="textSecondary">
+                                          "Yes / No"
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                        <Typography component="h6" variant="h6">
+                                        My education level is .....
+                                        </Typography>
+                                        <Typography variant="subtitle1" color="textSecondary">
+                                          "High School, PHD"
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                      <Typography component="h6" variant="h6">
+                                      My am currently .....
+                                      </Typography>
+                                      <Typography variant="subtitle1" color="textSecondary">
+                                        "employee, looking for job"
+                                      </Typography>
+                                    </Grid>
+  
+                                  </Grid>
+                                
+                                </CardContent>
+                              </div>
+                           </Card>
+      {/* /////WHAT I AM LOOKING FOR  CARD */}
+
+
                 </div>
               </Grid>
 
 
 {/* RIGHT PANE */}
+{/* /////STATUS CARD */}
 
               <Grid item md={4}>
                 <div className={classes.mainFeaturedPostContent}>
                   <Card  >
-                      <div className={classes.profileStatusCard}>
+                      <div className={classes.specialBorderCard}>
                           <CardContent >
                               <Typography variant="h5" color="inherit" paragraph>
                                 Profile Status
@@ -263,7 +447,9 @@ const styles = theme => ({
             </Grid>
           </Paper>
         </div>
+
     {/* Footer */}
+{/* /////FOOTER CARD */}
     <footer className={classes.footer}>
       <Card className={classes.footerCard}>
        <Tabs
@@ -271,7 +457,7 @@ const styles = theme => ({
             indicatorColor="primary" 
             textColor = "blue"
             centered
-            style={{ marginTop: 15}}
+            style={{ marginTop:2}}
           >
         <Tab icon={<FavoriteIcon />} />
         <Tab icon={<PersonPinIcon />} />
@@ -280,12 +466,12 @@ const styles = theme => ({
         <Tab icon={<ThumbDown />} />
         <Tab icon={<ThumbUp />} />
       </Tabs>
-
+{/* 
       <Typography variant="h6" align="center" color="textSecondary" gutterBottom >
               ...
-            </Typography>
+            </Typography> */}
             {social.map(network => (
-              <Typography key={network}>{network}</Typography>
+              <Typography color="textSecondary" key={network}>{network}</Typography>
             ))}
       </Card>
     </footer>
