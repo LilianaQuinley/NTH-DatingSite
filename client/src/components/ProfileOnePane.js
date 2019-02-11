@@ -15,7 +15,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
 import Button from '@material-ui/core/Button';
-
 import Picture from "../Assets/Images/beach.jpeg"
 
 //////PANE #2
@@ -74,9 +73,13 @@ const styles = theme => ({
   });
   
   const social = ['GitHub', 'Twitter', 'Facebook'];
+ 
 
   function ProfileOnePane(props) {
     const { classes } = props;
+
+    // const { values : { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking,
+    //   haveChildren, educationLevel, employmentStatus, incomeRange, email } } = this.props;
 
 
     return (
@@ -138,6 +141,7 @@ const styles = theme => ({
                                     id="outlined-full-width"
                                     label="Gender & Age"
                                     //style={{ margin: 8 }}
+                                   // defaultValue= {gender}
                                     placeholder= "Female 35 years old.."
                                     fullWidth
                                     margin="normal"
@@ -148,9 +152,10 @@ const styles = theme => ({
                                   />
                               <TextField
                                     id="outlined-full-width"
-                                    label="Ethic"
+                                    label="Ethnic"
                                     //style={{ margin: 8 }}
                                     placeholder="Caucasian"
+                                    //defaultValue= {ethnic}
                                     fullWidth
                                     margin="normal"
                                     variant="outlined"
@@ -162,6 +167,7 @@ const styles = theme => ({
                                     id="outlined-full-width"
                                     label="Interested"
                                     //style={{ margin: 8 }}
+                                   // defaultValue= {relationshipLooking}
                                     placeholder="Seeking men 44 - 58 within 50 miles"
                                     fullWidth
                                     margin="normal"

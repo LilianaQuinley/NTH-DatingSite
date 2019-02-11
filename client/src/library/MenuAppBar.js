@@ -43,9 +43,13 @@ function MenuAppBar (props) {
   let password = "";
   let email = "";
 
+  const sucess = (target, profile) => {toggleFun (target, email, profile)};
+  const failure =  () => alert ("Incorrect username / password");
+
+
   const handleClick = () => {
     const body = {email: email, password: password}
-    API.login (body, () => toggleFun ('profile'), () => alert ("Incorrect username / password"))
+    API.login (body, sucess, failure)
   };
 
   const handleChangePW = e => {

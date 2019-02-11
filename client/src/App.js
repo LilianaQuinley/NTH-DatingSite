@@ -13,7 +13,7 @@ import ProfilePage from "./components/ProfilePage";
 class App extends Component {
   constructor (props) {
     super (props);
-    this.state = {userState : "profile"}
+    this.state = {userState : "nonuser"}
   }
 
   toggleFun = (stateS, email) => {

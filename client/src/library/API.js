@@ -34,11 +34,13 @@ const API = {
       },
 
       login: function (body, sucess, failure) {
-          console.log("Login this person")
         return axios.post('/api/login', body)
         .then(function (response) {
             if (response.data.result == "goodlogin") {
-                 sucess();        
+                 sucess("profile", response.data.profile);        
+            }
+            else if (response.data.result == "nonprofile"){
+                sucess ("registering")
             }
             else {
                 failure ();
