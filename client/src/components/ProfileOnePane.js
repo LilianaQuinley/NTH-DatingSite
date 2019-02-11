@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
@@ -15,7 +15,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
 import Button from '@material-ui/core/Button';
-import Divider from '@material-ui/core/Divider';
+
 import Picture from "../Assets/Images/beach.jpeg"
 
 //////PANE #2
@@ -24,102 +24,70 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
+import TextField from '@material-ui/core/TextField';
 
+
+//////FOOTER
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import PersonPinIcon from '@material-ui/icons/PersonPin';
+import HelpIcon from '@material-ui/icons/Help';
+import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
+import ThumbDown from '@material-ui/icons/ThumbDown';
+import ThumbUp from '@material-ui/icons/ThumbUp';
 
 
 const styles = theme => ({
-    layout: {
-      width: 'auto',
-      marginLeft: theme.spacing.unit * 3,
-      marginRight: theme.spacing.unit * 3,
-      [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
-        width: 1100,
-        marginLeft: 'auto',
-        marginRight: 'auto',
-      },
-    },
-    toolbarMain: {
-      borderBottom: `1px solid ${theme.palette.grey[300]}`,
-    },
-    toolbarTitle: {
-      flex: 1,
-    },
-    toolbarSecondary: {
-      justifyContent: 'space-between',
-    },
-    mainFeaturedPost: {
-      backgroundColor: theme.palette.white,
-      color: theme.palette.common.black,
-      marginBottom: theme.spacing.unit * 4,
-    },
-    mainFeaturedPostContent: {
-      padding: `${theme.spacing.unit * 6}px`,
-      [theme.breakpoints.up('md')]: {
-        paddingRight: 0,
-      },
-    },
-    mainGrid: {
-      marginTop: theme.spacing.unit * 3,
-    },
 
+  mainFeaturedPostContent: {
+    padding: `${theme.spacing.unit * 6}px`,
+    [theme.breakpoints.up('md')]: {
+      paddingRight: 0,
+    },
+  },
 
-    //////////////////////////
-    card: {
-      display: "flex"
-    },
-    bullet: {
-      display: 'inline-block',
-      margin: '0 2px',
-      transform: 'scale(0.8)',
-    },
+  card: {
+    display: "flex",
+    boxShadow: 'rgba(255, 0, 0, 0.117647) 0px 1px 6px, rgba(255, 0, 0, 0.117647) 0px 1px 4px',
+  },
 
-    bullet: {
-      display: 'inline-block',
-      margin: '0 2px',
-      transform: 'scale(0.8)',
-    },
+  BioCard: {
+    boxShadow: 'rgba(255, 0, 0, 0.117647) 0px 1px 6px, rgba(255, 0, 0, 0.117647) 0px 1px 4px',
+  },
 
-    
-    //////////////////////////
+  footerCard: {
+    boxShadow: 'rgba(255, 0, 0, 0.117647) 0px 1px 6px, rgba(255, 0, 0, 0.117647) 0px 1px 4px',
+  },
 
-    cardDetails: {
-      flex: 1,
-    },
-    cardMedia: {
-      width: 160,
-    },
-    markdown: {
-      padding: `${theme.spacing.unit * 3}px 0`,
-    },
-    sidebarAboutBox: {
-      padding: theme.spacing.unit * 2,
-      backgroundColor: theme.palette.grey[200],
-    },
-    sidebarSection: {
-      marginTop: theme.spacing.unit * 3,
-    },
-    footer: {
-      backgroundColor: theme.palette.background.paper,
-      marginTop: theme.spacing.unit * 8,
-      padding: `${theme.spacing.unit * 6}px 0`,
-    },
+  profileStatusCard: {
+    margin: 25 ,
+    borderColor: "black",
+    boxShadow: 'rgba(255, 0, 0, 0.117647) 0px 1px 6px, rgba(255, 0, 0, 0.117647) 0px 1px 4px',
+    display: "relative"
+
+  },
+
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    marginTop: theme.spacing.unit * 2,
+    padding: `${theme.spacing.unit * 6}px 0`,
+  }
+
   });
-
   
   const social = ['GitHub', 'Twitter', 'Facebook'];
 
   function ProfileOnePane(props) {
     const { classes } = props;
-    const bull = <span className={classes.bullet}>•</span>;
 
-    
+
     return (
       <React.Fragment>
      
-        <div className={classes.layout}>
+        <div >
               <Typography variant="h6" gutterBottom>
-              NTH - Relleno
+              NTH - Relleno - This needs to be here
               </Typography>
 
           <Paper className={classes.mainFeaturedPost}>
@@ -130,36 +98,58 @@ const styles = theme => ({
                     My Profile
                     </Typography>
                           <Card className={classes.card}>
-                              <div className={classes.details}>
-                                <CardContent className={classes.content}>
-
-                                <CardMedia
-                                    component="img"
-                                    alt="Use Picture"
-                                    height=""
-                                    image= { Picture }
-                                    title="UserPicture"
-                                  />
-                                  <Typography component="h5" variant="h5">
-                                    "Your Nickname"
-                                  </Typography>
-                                  <Typography variant="subtitle1" color="textSecondary">
-                                    "Your Email"
-                                  </Typography>
+                              <div >
+                                <CardContent>
+                                  <CardMedia
+                                      component="img"
+                                      alt="Use Picture"
+                                      height=""
+                                      image= { Picture }
+                                      title="UserPicture"
+                                    />
+                                    <Typography component="h5" variant="h5">
+                                      "Your Nickname"
+                                    </Typography>
+                                    <Typography variant="subtitle1" color="textSecondary">
+                                      "Your Email"
+                                    </Typography>
                                 </CardContent>
                               </div>
                            </Card>
                            <br/>
-                           <Divider />
+
+                           <Card className={classes.BioCard}>
+                              <div >
+                                <CardContent >
+                                <TextField
+                                    id="outlined-full-width"
+                                    label="Bio"
+                                    //style={{ margin: 8 }}
+                                    placeholder="I am fun, energetic, animal lover.."
+                                    helperText="Special Instructions!"
+                                    fullWidth
+                                    margin="normal"
+                                    variant="outlined"
+                                    InputLabelProps={{
+                                      shrink: true,
+                                    }}
+                                  />
+                                </CardContent>
+                              </div>
+                           </Card>
+                           <br />
                            
           
                            <Card className={classes.card}>
-                              <div className={classes.details}>
-                                <CardContent className={classes.content}>
+                              <div >
+                                <CardContent >
                                   <Typography component="h5" variant="h5">
                                       ABOUT ME
                                       </Typography>
                                     <br/>
+
+
+
         {/* const { values : { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking,
         haveChildren, educationLevel, employmentStatus, incomeRange, email
 
@@ -225,15 +215,17 @@ const styles = theme => ({
               </Grid>
 
 
+{/* RIGHT PANE */}
+
               <Grid item md={4}>
                 <div className={classes.mainFeaturedPostContent}>
-                  <Card className={classes.card} >
-                      <div className={classes.details}>
-                          <CardContent className={classes.content}>
+                  <Card  >
+                      <div className={classes.profileStatusCard}>
+                          <CardContent >
                               <Typography variant="h5" color="inherit" paragraph>
                                 Profile Status
                               </Typography>
-                            <FormControl component="fieldset" className={classes.formControl}>
+                            <FormControl component="fieldset" >
                                   <RadioGroup
                                   aria-label="Profile Status"
                                   name="profileStatus"
@@ -270,29 +262,37 @@ const styles = theme => ({
               </Grid>
             </Grid>
           </Paper>
-
-
-
         </div>
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
-                Social
-              </Typography>
-              {social.map(network => (
-                <Typography key={network}>{network}</Typography>
-              ))}
-        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-          Something here to give the footer a purpose!
-        </Typography>
-      </footer>
-      {/* End footer */}
+    {/* Footer */}
+    <footer className={classes.footer}>
+      <Card className={classes.footerCard}>
+       <Tabs
+            value = {0}      
+            indicatorColor="primary" 
+            textColor = "blue"
+            centered
+            style={{ marginTop: 15}}
+          >
+        <Tab icon={<FavoriteIcon />} />
+        <Tab icon={<PersonPinIcon />} />
+        <Tab icon={<HelpIcon />} />
+        <Tab icon={<ShoppingBasket />} />
+        <Tab icon={<ThumbDown />} />
+        <Tab icon={<ThumbUp />} />
+      </Tabs>
 
-      
-    </React.Fragment>
+      <Typography variant="h6" align="center" color="textSecondary" gutterBottom >
+              ...
+            </Typography>
+            {social.map(network => (
+              <Typography key={network}>{network}</Typography>
+            ))}
+      </Card>
+    </footer>
+    {/* End footer */}
+
+
+  </React.Fragment>
   );
 }
 
