@@ -39,7 +39,7 @@ const API = {
             if (response.data.result == "goodlogin") {
                  sucess("profile", response.data.profile);        
             }
-            else if (response.data.result == "nonprofile"){
+            else if (response.data.result == "noprofile"){
                 sucess ("registering")
             }
             else {

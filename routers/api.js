@@ -65,14 +65,17 @@ module.exports = app => {
         DB.User.find ({email: body.email, password: body.password}, function (err, results) {
             if (!err) {
                 if (results.length == 0 ){
+                    console.log("badlogin");
                     return res.send ({result: "badlogin"});                    
                 }
                 else {
                     DB.UserProfile.find({email: body.email}, function (profErr, profResults) {
                         if (profResults.length > 0) {
+                            console.log("goodlogin");
                             return res.send ({result:"goodlogin", profile:profResults[0]})      
                         }
                         else {
+                            console.log("noprofil");
                             return res.send ({result:"noprofile"})
                         }
                     })

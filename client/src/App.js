@@ -9,11 +9,12 @@ import Footer  from "./library/Footer";
 import MainPage from "./components/MainPage";
 import InputFormMain from './InputFormMain';
 import ProfilePage from "./components/ProfilePage";
+import SearchPage from "./components/SearchPage";
 
 class App extends Component {
   constructor (props) {
     super (props);
-    this.state = {userState : "nonuser"}
+    this.state = {userState : "search"}
   }
 
   toggleFun = (stateS, email, profile) => {
@@ -48,6 +49,12 @@ class App extends Component {
         return (
         <div className = "App">
           <ProfilePage profile = {this.state.profile}/>
+        </div>
+      )}
+      else if (this.state.userState == "search"){
+        return (
+        <div className = "App">
+          <SearchPage/>
         </div>
       )}
 

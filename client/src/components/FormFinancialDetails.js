@@ -108,7 +108,7 @@ export class FormFinancialDetails extends Component {
                             <FormControlLabel
                                 value="High Less than high school"
                                 control={<Radio color="primary" />}
-                                label="High Less than high school"
+                                label="Less than high school"
                                 labelPlacement="start"
                             />
                         </RadioGroup>

@@ -58,7 +58,7 @@ export class Confirm extends Component {
 
                     <ListItem
                         primaryText = {
-                        <Typography variant="p" style={{ color: 'blue' }}>Birthday
+                        <Typography variant="h6" style={{ color: 'blue' }}>Birthday
                         </Typography>
                         }
                         secondaryText = {
@@ -69,7 +69,7 @@ export class Confirm extends Component {
 
                     <ListItem
                         primaryText = {
-                        <Typography variant="p" style={{ color: 'blue' }}>Gender
+                        <Typography variant="h6" style={{ color: 'blue' }}>Gender
                         </Typography>
                         }
                         secondaryText = {

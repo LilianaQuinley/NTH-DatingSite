@@ -132,9 +132,9 @@ export class FormUserDetails extends Component {
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="Other"
+                                value="Both Men or Woman "
                                 control={<Radio color="primary" />}
-                                label="Other"
+                                label="Either"
                                 labelPlacement="start"
                             />
                             </RadioGroup>

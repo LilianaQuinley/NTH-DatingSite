@@ -46,6 +46,11 @@ const styles = theme => ({
     },
   },
 
+  toolbarMain: {
+    //borderBottom: `1px solid ${theme.palette.grey[300]}`,
+    alignItems: "right"
+  },
+
   card: {
     display: "flex",
     boxShadow: 'rgba(255, 0, 0, 0.117647) 0px 1px 6px, rgba(255, 0, 0, 0.117647) 0px 1px 4px',
@@ -97,9 +102,17 @@ const styles = theme => ({
             <Grid container>
               <Grid item md={8}>
                 <div className={classes.mainFeaturedPostContent}>
+                <Toolbar className={classes.toolbarMain}>
                     <Typography variant="h5" color="inherit" paragraph>
-                    My Profile
+                      My Profile
                     </Typography>
+                    <IconButton>
+                      <SearchIcon />
+                      <Typography variant="h6" align="center" color="textSecondary" gutterBottom >
+              Search
+            </Typography> 
+                    </IconButton>
+                  </Toolbar>
                       
       {/* Profile Image CARD  */}
       <Grid container className={classes.root} spacing={16}>
@@ -131,7 +144,6 @@ const styles = theme => ({
                               <TextField
                                     id="outlined-full-width"
                                     label="Name"
-                                    //style={{ margin: 8 }}
                                     placeholder="Nickname"
                                     fullWidth
                                     margin="normal"
@@ -143,7 +155,6 @@ const styles = theme => ({
                               <TextField
                                     id="outlined-full-width"
                                     label="Gender & Age"
-                                    //style={{ margin: 8 }}
                                    defaultValue= {gender}
                                     placeholder= "Female 35 years old.."
                                     fullWidth
@@ -169,8 +180,7 @@ const styles = theme => ({
                               <TextField
                                     id="outlined-full-width"
                                     label="Interested"
-                                    //style={{ margin: 8 }}
-                                   // defaultValue= {relationshipLooking}
+                                   defaultValue= {lookingFor}
                                     placeholder="Seeking men 44 - 58 within 50 miles"
                                     fullWidth
                                     margin="normal"
@@ -192,7 +202,6 @@ const styles = theme => ({
                                 <TextField
                                     id="outlined-full-width"
                                     label="Bio"
-                                    //style={{ margin: 8 }}
                                     placeholder="I am fun, energetic, animal lover.."
                                     //helperText="Special Instructions!"
                                     fullWidth
@@ -238,10 +247,10 @@ const styles = theme => ({
                                     <Grid container>
                                       <Grid item md={6}>
                                         <Typography component="h6" variant="h6">
-                                        I am Looking For ....
+                                        Seeking ....
                                         </Typography>
                                         <Typography variant="subtitle1" color="textSecondary">
-                                          "Female, men, both"
+                                          {lookingFor}
                                         </Typography>
                                       </Grid>
                                       <Grid item md={6}>
@@ -249,15 +258,15 @@ const styles = theme => ({
                                         My Relationship Status is.....
                                         </Typography>
                                         <Typography variant="subtitle1" color="textSecondary">
-                                          "Divorce, Single.."
+                                          {relationshipStatus}
                                         </Typography>
                                     </Grid>
                                     <Grid item md={6}>
                                         <Typography component="h6" variant="h6">
-                                        I an interested on ....
+                                        I am interested in ....
                                         </Typography>
                                         <Typography variant="subtitle1" color="textSecondary">
-                                        "RelationShip that I am looking for"
+                                        {relationshipLooking}
                                         </Typography>
                                     </Grid>
                                     <Grid item md={6}>
@@ -265,7 +274,7 @@ const styles = theme => ({
                                         I have children .....
                                         </Typography>
                                         <Typography variant="subtitle1" color="textSecondary">
-                                          "Yes / No"
+                                         {haveChildren}
                                         </Typography>
                                     </Grid>
                                     <Grid item md={6}>
@@ -273,15 +282,15 @@ const styles = theme => ({
                                         My education level is .....
                                         </Typography>
                                         <Typography variant="subtitle1" color="textSecondary">
-                                          "High School, PHD"
+                                          {educationLevel}
                                         </Typography>
                                     </Grid>
                                     <Grid item md={6}>
                                       <Typography component="h6" variant="h6">
-                                      My am currently .....
+                                      My employment status .....
                                       </Typography>
                                       <Typography variant="subtitle1" color="textSecondary">
-                                        "employee, looking for job"
+                                        {employmentStatus}
                                       </Typography>
                                     </Grid>
   
@@ -302,7 +311,6 @@ const styles = theme => ({
                                 <TextField
                                     id="outlined-full-width"
                                     label="A little More About Me"
-                                    //style={{ margin: 8 }}
                                     placeholder=" Favorite things, Favorite pet, Religious.."
                                     fullWidth
                                     margin="normal"
@@ -351,48 +359,50 @@ const styles = theme => ({
                                         I am Looking For ....
                                         </Typography>
                                         <Typography variant="subtitle1" color="textSecondary">
-                                          "Female, men, both"
+                                          "Men, 35 - 40 Years old"
                                         </Typography>
                                       </Grid>
-                                      <Grid item md={6}>
+
+                                    <Grid item md={6}>
                                         <Typography component="h6" variant="h6">
-                                        My Relationship Status is.....
+                                        Ethnicity .....
                                         </Typography>
                                         <Typography variant="subtitle1" color="textSecondary">
-                                          "Divorce, Single.."
+                                          "No preference"
                                         </Typography>
                                     </Grid>
                                     <Grid item md={6}>
                                         <Typography component="h6" variant="h6">
-                                        I an interested on ....
+                                        Language Spoken .....
                                         </Typography>
                                         <Typography variant="subtitle1" color="textSecondary">
-                                        "RelationShip that I am looking for"
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item md={6}>
-                                        <Typography component="h6" variant="h6">
-                                        I have children .....
-                                        </Typography>
-                                        <Typography variant="subtitle1" color="textSecondary">
-                                          "Yes / No"
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item md={6}>
-                                        <Typography component="h6" variant="h6">
-                                        My education level is .....
-                                        </Typography>
-                                        <Typography variant="subtitle1" color="textSecondary">
-                                          "High School, PHD"
+                                          "No preference"
                                         </Typography>
                                     </Grid>
                                     <Grid item md={6}>
                                       <Typography component="h6" variant="h6">
-                                      My am currently .....
+                                      Religion.....
                                       </Typography>
                                       <Typography variant="subtitle1" color="textSecondary">
-                                        "employee, looking for job"
+                                        "No preference"
                                       </Typography>
+                                    </Grid>
+
+                                    <Grid item md={6}>
+                                        <Typography component="h6" variant="h6">
+                                        Smoker ....
+                                        </Typography>
+                                        <Typography variant="subtitle1" color="textSecondary">
+                                        "Definitely No"
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item md={6}>
+                                        <Typography component="h6" variant="h6">
+                                        Wants children ....
+                                        </Typography>
+                                        <Typography variant="subtitle1" color="textSecondary">
+                                        "Yes"
+                                        </Typography>
                                     </Grid>
   
                                   </Grid>
