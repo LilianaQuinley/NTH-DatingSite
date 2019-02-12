@@ -31,6 +31,10 @@ class App extends Component {
   goSearch = () => {
       this.setState ({userState : "search"})
   }
+
+  goProfile = () => {
+      this.setState({userState : "profile"})
+  }
   
 
   render() {
@@ -59,7 +63,7 @@ class App extends Component {
       else if (this.state.userState == "search"){
         return (
         <div className = "App">
-          <SearchPage />
+          <SearchPage goProfile = {this.goProfile}/>
         </div>
       )}
 

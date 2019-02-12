@@ -21,7 +21,7 @@ export class SearchPage extends Component {
 
                 <Grid container style = {styles.container}>
                     <Grid item sm>
-                            <SearchOnePage />
+                            <SearchOnePage  goProfile = {this.props.goProfile}/>
                     </Grid>
                 </Grid>
 

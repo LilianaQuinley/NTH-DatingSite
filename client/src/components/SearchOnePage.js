@@ -18,7 +18,13 @@ import Picture from "../Assets/Images/beach.jpeg"
 
 //////SEARCH
 
-
+//import { makeStyles } from '@material-ui/styles';
+import Input from '@material-ui/core/Input';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import FilledInput from '@material-ui/core/FilledInput';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 
 
 
@@ -83,6 +89,21 @@ import ThumbUp from '@material-ui/icons/ThumbUp';
     });
 
 
+    // const useStyles = makeStyles(theme => ({
+    //   root: {
+    //     display: 'flex',
+    //     flexWrap: 'wrap',
+    //   },
+    //   formControl: {
+    //     margin: theme.spacing.unit,
+    //     minWidth: 120,
+    //   },
+    //   selectEmpty: {
+    //     marginTop: theme.spacing.unit * 2,
+    //   },
+    // }));
+    
+
   ////END STYLES //  
   
   
@@ -90,7 +111,24 @@ import ThumbUp from '@material-ui/icons/ThumbUp';
 
   function SearchOnePage(props) {
 
-    const { classes } = props;    
+    const { classes } = props;   
+    const goProfile = props.goProfile
+
+   // const classes = useStyles();
+    const [state, setState] = React.useState({
+      age: '',
+      name: 'hai',
+      labelWidth: 0,
+    });
+    const inputLabelRef = React.useRef(null);
+
+    function handleChange(event) {
+      setState({
+        ...state,
+        [event.target.name]: event.target.value,
+      });
+    }
+
 
     return (
       <React.Fragment>
@@ -112,7 +150,7 @@ import ThumbUp from '@material-ui/icons/ThumbUp';
                       <FaceIcon />
                     </IconButton>
 
-                    <IconButton>
+                    <IconButton onClick = {goProfile}>
                     <Typography variant="h5" color="primary" paragraph >
                         Profile
                     </Typography> 
@@ -122,6 +160,28 @@ import ThumbUp from '@material-ui/icons/ThumbUp';
                       
 
 {/* SEARCH  */}
+
+
+<form className={classes.root} autoComplete="off">
+      <FormControl className={classes.formControl}>
+        <InputLabel htmlFor="age-simple">Age</InputLabel>
+        <Select
+          value={state.age}
+          onChange={handleChange}
+          inputProps={{
+            name: 'age',
+            id: 'age-simple',
+          }}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+  </form>
 
 
       {/* Profile Image CARD  */}
