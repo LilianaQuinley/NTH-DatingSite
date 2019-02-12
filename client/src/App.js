@@ -22,12 +22,16 @@ class App extends Component {
     console.log(profile);
 
     if (profile) {
-      
       this.setState ({userState : stateS, email: email, profile: profile});
     }else {
           this.setState({userState : stateS, email: email})  
     }
   }
+
+  goSearch = () => {
+      this.setState ({userState : "search"})
+  }
+  
 
   render() {
 
@@ -48,13 +52,14 @@ class App extends Component {
       else if (this.state.userState == "profile"){
         return (
         <div className = "App">
-          <ProfilePage profile = {this.state.profile}/>
+          <ProfilePage profile = {this.state.profile} search = {this.goSearch}/>
+
         </div>
       )}
       else if (this.state.userState == "search"){
         return (
         <div className = "App">
-          <SearchPage/>
+          <SearchPage />
         </div>
       )}
 

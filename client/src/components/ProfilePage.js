@@ -21,7 +21,7 @@ export class ProfilePage extends Component {
 
                 <Grid container style = {styles.container}>
                     <Grid item sm>
-                            <ProfileOnePane profile={this.props.profile} />
+                            <ProfileOnePane profile={this.props.profile} search={this.props.search} />
                     </Grid>
                 </Grid>
 

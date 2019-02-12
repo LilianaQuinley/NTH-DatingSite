@@ -85,6 +85,7 @@ const styles = theme => ({
     console.log("this is props")
     console.log(props)
     const profile = props.profile;
+    const search = props.search;
 
     const  { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking,
       haveChildren, educationLevel, employmentStatus, incomeRange, email } = profile;
@@ -106,8 +107,8 @@ const styles = theme => ({
                     <Typography variant="h5" color="inherit" paragraph>
                       My Profile
                     </Typography>
-                    <IconButton>
-                      <SearchIcon />
+                    <IconButton  onClick={search}>
+                      <SearchIcon/>
                       <Typography variant="h6" align="center" color="textSecondary" gutterBottom >
               Search
             </Typography> 
