@@ -43,7 +43,7 @@ function MenuAppBar (props) {
   let password = "";
   let email = "";
 
-  const sucess = (target, profile) => {toggleFun (target, email, profile)};
+  const sucess = (target, profile) => {toggleFun (target, email, profile )};
   const failure =  () => alert ("Incorrect username / password");
 
 

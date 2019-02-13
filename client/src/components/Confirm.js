@@ -31,7 +31,7 @@ export class Confirm extends Component {
     render() {
     const {classes} = this.props
     const { values : { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking,
-        haveChildren, educationLevel, employmentStatus, incomeRange, email } } = this.props;
+        haveChildren, educationLevel, employmentStatus, incomeRange, email, firstName, lastName } } = this.props;
 
     const muiTheme = getMuiTheme({
         
@@ -51,7 +51,7 @@ export class Confirm extends Component {
                 position="sticky"
                 title= " Confirmation ">
                     <div style = {{color:"white"}}>
-                    {email}
+                    {email} 
                     </div>
             </AppBar>
                 <List>

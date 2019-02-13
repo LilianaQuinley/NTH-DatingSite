@@ -11,20 +11,21 @@ import InputFormMain from './InputFormMain';
 import ProfilePage from "./components/ProfilePage";
 import SearchPage from "./components/SearchPage";
 
+
 class App extends Component {
   constructor (props) {
     super (props);
-    this.state = {userState : "nonuser"}
+    this.state = {userState : "search"}
   }
 
-  toggleFun = (stateS, email, profile) => {
+  toggleFun = (stateS, email, profile, firstName, lastName) => {
     console.log("profile from app");
     console.log(profile);
 
     if (profile) {
-      this.setState ({userState : stateS, email: email, profile: profile});
+      this.setState ({userState : stateS, email: email, profile: profile, firstName : firstName, lastName: lastName});
     }else {
-          this.setState({userState : stateS, email: email})  
+          this.setState({userState : stateS, email: email, firstName : firstName, lastName: lastName})  
     }
   }
 
@@ -63,7 +64,9 @@ class App extends Component {
       else if (this.state.userState == "search"){
         return (
         <div className = "App">
-          <SearchPage goProfile = {this.goProfile}/>
+          {/* <SearchPage goProfile = {this.goProfile}/> */}
+          <SearchPage/>
+
         </div>
       )}
 

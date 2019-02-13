@@ -21,7 +21,9 @@ export class UserForm extends Component {
         educationLevel : '',
         employmentStatus: '',
         incomeRange: '',
-        email: this.props.email
+        email: this.props.email,
+        firstName: this.props.firstName, 
+        lastName: this.props.lastName
     }
 
     // proceede to next step:
@@ -53,9 +55,9 @@ export class UserForm extends Component {
     const { step } = this.state;
     const {toggleFun} = this.props;
     const { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking, haveChildren,
-    educationLevel, employmentStatus, incomeRange, email} = this.state; 
+    educationLevel, employmentStatus, incomeRange, email, firstName, lastName} = this.state; 
     const values = { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking, haveChildren,
-        educationLevel, employmentStatus, incomeRange, email }
+        educationLevel, employmentStatus, incomeRange, email, firstName, lastName }
     
     switch (step) {
         case 1: 

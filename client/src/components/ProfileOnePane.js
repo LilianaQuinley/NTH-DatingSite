@@ -88,7 +88,7 @@ const styles = theme => ({
     const search = props.search;
 
     const  { birthday, gender, lookingFor, ethnic, relationshipStatus, relationshipLooking,
-      haveChildren, educationLevel, employmentStatus, incomeRange, email } = profile;
+      haveChildren, educationLevel, employmentStatus, incomeRange, email, firstName, lastName } = profile;
 
 
     return (
@@ -145,6 +145,7 @@ const styles = theme => ({
                               <TextField
                                     id="outlined-full-width"
                                     label="Name"
+                                    defaultValue= {firstName}
                                     placeholder="Nickname"
                                     fullWidth
                                     margin="normal"
