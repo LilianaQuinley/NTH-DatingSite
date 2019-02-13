@@ -476,7 +476,6 @@ const styles = theme => ({
        <Tabs
             value = {0}      
             indicatorColor="primary" 
-            textColor = "blue"
             centered
             style={{ marginTop:2}}
           >

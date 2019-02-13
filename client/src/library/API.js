@@ -25,7 +25,7 @@ const API = {
         .then(function (response) {
             console.log("Log my response");
             console.log(response);
-            sucess();
+            sucess("profile");
           })
           .catch(function (error) {
               console.log("Log my error.")
