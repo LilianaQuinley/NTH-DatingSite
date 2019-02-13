@@ -4,16 +4,15 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import axios from "axios";
 
-
-
 class SearchOnePage extends Component {
     state = {
         searchText: '',
         gender: "male",
-        age: "25-30 years old",
-        haschildren: "No Preference",
-        smoke: "No Preference",
-        ethnic: "No Preference",
+        lookingFor: "female",
+        ethnic: "NoPreference",
+        haschildren: "NoPreference",
+        employmentStatus: "NoPreference",
+        
         apiUrl:"/api/users"
     }
 
@@ -23,6 +22,7 @@ class SearchOnePage extends Component {
             axios.get(`${this.state.apiUrl}`)
           } ) ;
     };
+
 
     onChange = (e, index, value) => this.setState ({name: value});
   
@@ -48,22 +48,21 @@ class SearchOnePage extends Component {
               >       
                 <MenuItem value={"male"} primaryText = "Male" />
                 <MenuItem value={"female"} primaryText = "Female" />
-                <MenuItem value={"No Preference"} primaryText = "No Preference" />
+                <MenuItem value={"other"} primaryText = "No Preference" />
 
             </SelectField>
 
 
             <br/>
             <SelectField 
-              name = "age"
-              floatingLabelText= "Age"
-              value={this.state.age}
-              onChange={this.onGenderChange}
+              name = "lookingFor"
+              floatingLabelText= "Looking For"
+              value={this.state.lookingFor}
+              onChange={this.onChange}
               >       
-                <MenuItem value={"25-30"} primaryText = "25 to 30 years old" />
-                <MenuItem value={"30-35"} primaryText = "30 to 35 years old" />
-                <MenuItem value={"35-40"} primaryText = "35 to 40 years old" />
-                <MenuItem value={"0-100"} primaryText = "No Preference" />
+                <MenuItem value={"male"} primaryText = "Male" />
+                <MenuItem value={"female"} primaryText = "Female" />
+                <MenuItem value={"either"} primaryText = "No preference" />
             </SelectField>
 
             <br/>
@@ -71,23 +70,25 @@ class SearchOnePage extends Component {
               name = "haschildren"
               floatingLabelText= "Has Children"
               value={this.state.haschildren}
-              onChange={this.onGenderChange}
+              onChange={this.onChange}
               >       
                 <MenuItem value={"Yes"} primaryText = "Yes" />
                 <MenuItem value={"No"} primaryText = "No" />
-                <MenuItem value={"No Preference"} primaryText = "No Preference" />
+                <MenuItem value={"NoPreference"} primaryText = "No Preference" />
             </SelectField>
 
             <br/>
             <SelectField 
-              name = "smoke"
-              floatingLabelText= "Smokes"
-              value={this.state.smokes}
-              onChange={this.onGenderChange}
+              name = "employmentStatus"
+              floatingLabelText= "Employment Status"
+              value={this.state.employmentStatus}
+              onChange={this.onChange}
               >       
-                <MenuItem value={"True"} primaryText = "Yes" />
-                <MenuItem value={"False"} primaryText = "No" />
-                <MenuItem value={"No Preference"} primaryText = "No Preference" />
+                <MenuItem value={"employed"} primaryText = "Employed" />
+                <MenuItem value={"selfEmployed"} primaryText = "Self Employee" />
+                <MenuItem value={"notWorking"} primaryText = "Not Working" />
+                <MenuItem value={"NoPreference"} primaryText = "No Preference" />
+
             </SelectField>
 
             <br/>
@@ -95,20 +96,14 @@ class SearchOnePage extends Component {
               name = "ethnic"
               floatingLabelText= "Ethnic"
               value={this.state.ethnic}
-              onChange={this.onGenderChange}
+              onChange={this.OnChange}
               >       
                 <MenuItem value={"Caucasian"} primaryText = "Caucasian" />
                 <MenuItem value={"Latino"} primaryText = "Latino" />
                 <MenuItem value={ " Black or African American" } primaryText = " Black or African American" />
                 <MenuItem value={" Native American or American Indian"} primaryText = " Native American or American Indian" />
-                <MenuItem value={ "No Preference" } primaryText = "No Preference" />
+                <MenuItem value={ "NoPreference" } primaryText = "No Preference" />
             </SelectField>
-
-
-            
-
-
-
       </div>
     )
   }
