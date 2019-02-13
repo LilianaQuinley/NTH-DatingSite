@@ -1,110 +1,207 @@
 import React, { Component } from 'react'
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import FaceIcon from '@material-ui/icons/Face';
+import SearchIcon from '@material-ui/icons/Search';
+import Typography from '@material-ui/core/Typography';
+
+
 import TextField  from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import axios from "axios";
+
+import API from '../library/API';
+
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+
+
+
 
 class SearchOnePage extends Component {
-    state = {
-        searchText: '',
-        gender: "male",
-        lookingFor: "female",
-        ethnic: "NoPreference",
-        haschildren: "NoPreference",
-        employmentStatus: "NoPreference",
-        
-        apiUrl:"/api/users"
-    }
+  state = {
+    searchText: '',
+    money: '',
+}
 
-    onTextChange = (e) => {
-        this.setState ({ [e.target.name ] : e.target.value }, 
-          () => {
-            axios.get(`${this.state.apiUrl}`)
-          } ) ;
-    };
+updateSearch = () => {
+  console.log("state for search");
+  console.log(this.state);
+  const body = Object.keys(this.state)
+    .filter(key => this.state[key] != "" && this.state[key] != "No Preference")
+    .reduce((obj, key) => {
+      obj[key] = this.state[key];
+      return obj;
+    }, {});
+  console.log(body) 
+  API.search(body, () => alert("Success!"), () => alert("Failure!"))
+};
 
+onChangeGender = (e, index, value) => {
+  this.setState({gender: value}, () => {this.updateSearch()});
+  };
 
-    onChange = (e, index, value) => this.setState ({name: value});
+onChangeChildren = (e, index, value) => {
+  this.setState({haveChildren: value}, () => {this.updateSearch()});
+  };
+
+onChangeEthnic = (e, index, value) => {
+  this.setState({ethnic: value}, () => {this.updateSearch()});
+  };
+
   
 
 
   render() {
     return (
-      <div>
-          <TextField
+
+      <React.Fragment>
+        <Paper>
+          <Grid container>
+            <Grid item md={4}>
+            <div>
+              <Grid container  spacing={16}>
+                <Grid item sm={4}>
+                  <TextField
+                    name = "searchText"
+                    value = {this.state.searchText}
+                    onChange = {this.onTextChange}
+                    floatingLabelText = "FILLIN SPACE-RELLENO"
+                    fullWidth = {true}>
+                  </TextField>
+                      
+                         {/* ////LEFT PANEL */}
+                  <Toolbar >
+                    <IconButton  >
+                      <SearchIcon color="error" fontSize="large"/>
+                        <Typography variant="h4" color="error" paragraph>
+                          Search
+                        </Typography>
+                    </IconButton>
+                  </Toolbar>
+              </Grid>
+
+              <Grid item sm={8}>
+                <TextField
+                  name = "searchText"
+                  value = {this.state.searchText}
+                  onChange = {this.onTextChange}
+                  floatingLabelText = "Search for Profiles-- RELLENO"
+                  fullWidth = {true}>
+                </TextField>
+                <br/>
+                <SelectField 
+                  name = "gender"
+                  floatingLabelText= "Gender"
+                  value={this.state.gender}
+                  onChange={this.onChangeGender}
+                  >       
+                    <MenuItem value={"Male"} primaryText = "Male" />
+                    <MenuItem value={"Female"} primaryText = "Female" />
+                    <MenuItem value={"Other"} primaryText = "No Preference" />
+                </SelectField>
+                <br/>
+                <SelectField 
+                  name = "lookingFor"
+                  floatingLabelText= "Looking For"
+                  value={this.state.lookingFor}
+                  onChange={this.onChange}
+                  >       
+                    <MenuItem value={"Male"} primaryText = "Male" />
+                    <MenuItem value={"Female"} primaryText = "Female" />
+                    <MenuItem value={"Either"} primaryText = "No preference" />
+                </SelectField>
+                <br/>
+                <SelectField 
+                  name = "haveChildren"
+                  floatingLabelText= "Has Children"
+                  value={this.state.haschildren}
+                  onChange={this.onChangeChildren}
+                  >       
+                    <MenuItem value={"No"} primaryText = "No" />
+                    <MenuItem value={"Yes (Living at home full time)"} primaryText = "Yes (Living at home full time)" />
+                    <MenuItem value={"Yes (Living at home part time)"} primaryText = "Yes (Living at home part time)" />
+                    <MenuItem value={"Yes (Not Living at home)"} primaryText = "Yes (Not Living at home)" />
+                    <MenuItem value={"No Preference"} primaryText = "No Preference" />
+                  </SelectField>
+
+                  <br/>
+                  <SelectField 
+                    name = "employmentStatus"
+                    floatingLabelText= "Employment Status"
+                    value={this.state.employmentStatus}
+                    onChange={this.onChange}
+                    >       
+                      <MenuItem value={"employed"} primaryText = "Employed" />
+                      <MenuItem value={"selfEmployed"} primaryText = "Self Employee" />
+                      <MenuItem value={"notWorking"} primaryText = "Not Working" />
+                      <MenuItem value={"NoPreference"} primaryText = "No Preference" />
+
+                  </SelectField>
+
+                  <br/>
+                  <SelectField 
+                    name = "ethnic"
+                    floatingLabelText= "Ethnic"
+                    value={this.state.ethnic}
+                    onChange={this.onChangeEthnic}
+                    >       
+                    <MenuItem value={"Caucasian"} primaryText = "Caucasian" />
+                    <MenuItem value={"Latino"} primaryText = "Latino" />
+                    <MenuItem value={ "Black or African American" } primaryText = " Black or African American" />
+                    <MenuItem value={" Native American or American Indian"} primaryText = " Native American or American Indian" />
+                    <MenuItem value={ "NoPreference" } primaryText = "No Preference" />
+                </SelectField>
+                </Grid>
+          </Grid>
+          </div>
+          </Grid>
+
+    {/* ///RIGHT PANEL */}
+    
+        <Grid item md={8}>
+        <div>
+
+        <TextField
                 name = "searchText"
                 value = {this.state.searchText}
                 onChange = {this.onTextChange}
-                floatingLabelText = "Search for Profiles"
+                floatingLabelText = "FILLIN UP SPACE - RELLENO"
                 fullWidth = {true}>
           </TextField>
+        RESULTS PANEL
         
-        <br/>
-            <SelectField 
-              name = "gender"
-              floatingLabelText= "Gender"
-              value={this.state.gender}
-              onChange={this.onChange}
-              >       
-                <MenuItem value={"male"} primaryText = "Male" />
-                <MenuItem value={"female"} primaryText = "Female" />
-                <MenuItem value={"other"} primaryText = "No Preference" />
+        <Card >
+                            <div >
+                              <CardContent>
+                                <CardMedia
+                                    component="img"
+                                    alt="Use Picture"
+                                    height=""
+                                   // image= { Picture }
+                                    title="UserPicture"
+                                  />
+                                  <Typography variant="subtitle1" color="textSecondary">
+                                    "Something about this picture"
+                                  </Typography>
+                                  
+                              </CardContent>
+                            </div>
+                          </Card>
+                           <br />
 
-            </SelectField>
 
 
-            <br/>
-            <SelectField 
-              name = "lookingFor"
-              floatingLabelText= "Looking For"
-              value={this.state.lookingFor}
-              onChange={this.onChange}
-              >       
-                <MenuItem value={"male"} primaryText = "Male" />
-                <MenuItem value={"female"} primaryText = "Female" />
-                <MenuItem value={"either"} primaryText = "No preference" />
-            </SelectField>
+        </div>
+        </Grid>
 
-            <br/>
-            <SelectField 
-              name = "haschildren"
-              floatingLabelText= "Has Children"
-              value={this.state.haschildren}
-              onChange={this.onChange}
-              >       
-                <MenuItem value={"Yes"} primaryText = "Yes" />
-                <MenuItem value={"No"} primaryText = "No" />
-                <MenuItem value={"NoPreference"} primaryText = "No Preference" />
-            </SelectField>
-
-            <br/>
-            <SelectField 
-              name = "employmentStatus"
-              floatingLabelText= "Employment Status"
-              value={this.state.employmentStatus}
-              onChange={this.onChange}
-              >       
-                <MenuItem value={"employed"} primaryText = "Employed" />
-                <MenuItem value={"selfEmployed"} primaryText = "Self Employee" />
-                <MenuItem value={"notWorking"} primaryText = "Not Working" />
-                <MenuItem value={"NoPreference"} primaryText = "No Preference" />
-
-            </SelectField>
-
-            <br/>
-            <SelectField 
-              name = "ethnic"
-              floatingLabelText= "Ethnic"
-              value={this.state.ethnic}
-              onChange={this.OnChange}
-              >       
-                <MenuItem value={"Caucasian"} primaryText = "Caucasian" />
-                <MenuItem value={"Latino"} primaryText = "Latino" />
-                <MenuItem value={ " Black or African American" } primaryText = " Black or African American" />
-                <MenuItem value={" Native American or American Indian"} primaryText = " Native American or American Indian" />
-                <MenuItem value={ "NoPreference" } primaryText = "No Preference" />
-            </SelectField>
-      </div>
+</Grid>
+</Paper>
+</React.Fragment>
     )
   }
 }

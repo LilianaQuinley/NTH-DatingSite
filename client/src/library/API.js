@@ -50,6 +50,21 @@ const API = {
               console.log("Log my error.")
             console.log(error);
           });
+      },
+
+
+      search: function (body, sucess, failure) {
+        return axios.post('/api/search', body)
+        .then(function (response) {
+            console.log("Back from search");
+            console.log(response);
+            sucess();
+          })
+          .catch(function (error) {
+              console.log("Log my error.")
+            console.log(error);
+            failure();
+          });
       }
 };
 

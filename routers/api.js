@@ -87,4 +87,25 @@ module.exports = app => {
         });        
     });
 
+
+    app.post('/api/search', (req, res) => {
+        console.log("search for:")
+        const body = req.body;
+        console.log(body);
+
+        DB.UserProfile.find (body, function (err, results) {
+            if (!err) {
+               
+                let emails = []
+                results.forEach(it => emails.push(it.email));
+                DB.User.find({email:emails}, function(userErr, userResults) {
+                    return res.send(userResults)
+                });
+            }
+            else {
+                return res.send(err)
+            }
+        });        
+    });
+
 }
