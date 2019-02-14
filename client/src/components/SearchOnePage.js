@@ -45,13 +45,36 @@ onChangeGender = (e, index, value) => {
   this.setState({gender: value}, () => {this.updateSearch()});
   };
 
+onChangeLookingFor = (e, index, value) => {
+  this.setState({lookingFor: value}, () => {this.updateSearch()});
+  };
+
+onChangeRelationshipStatus = (e, index, value) => {
+    this.setState({relationshipStatus: value}, () => {this.updateSearch()});
+};
+
+    
+onChangeRelationshipLooking = (e, index, value) => {
+    this.setState({relationshipLooking: value}, () => {this.updateSearch()});
+};
+
 onChangeChildren = (e, index, value) => {
   this.setState({haveChildren: value}, () => {this.updateSearch()});
   };
 
+onChangeEmploymentStatus = (e, index, value) => {
+  this.setState({employmentStatus: value}, () => {this.updateSearch()});
+};
+
+onChangeEducation = (e, index, value) => {
+    this.setState({educationLevel: value}, () => {this.updateSearch()});
+};
+
 onChangeEthnic = (e, index, value) => {
   this.setState({ethnic: value}, () => {this.updateSearch()});
   };
+
+
 
 getProfile = (email) => {
   API.getProfile(email, (profile) => this.props.toggleFun ("profile", profile.email, profile),
@@ -116,7 +139,7 @@ getProfile = (email) => {
                   name = "lookingFor"
                   floatingLabelText= "Looking For"
                   value={this.state.lookingFor}
-                  onChange={this.onChange}
+                  onChange={this.onChangeLookingFor}
                   fullWidth = {true}
                   >       
                     <MenuItem value={"Female"} primaryText = "Female" />
@@ -143,8 +166,8 @@ getProfile = (email) => {
                 <SelectField 
                   name = "relationshipStatus"
                   floatingLabelText= "RelationShip Status"
-                  value={this.state.haschildren}
-                  onChange={this.onChangeChildren}
+                  value={this.state.relationshipStatus}
+                  onChange={this.onChangeRelationshipStatus}
                   fullWidth = {true}
                   >       
                     <MenuItem value={"Single (Never married)"} primaryText = "Single" />
@@ -156,8 +179,8 @@ getProfile = (email) => {
                 <SelectField 
                   name = "relationshipLooking"
                   floatingLabelText= " Type of relationship Looking for"
-                  value={this.state.haschildren}
-                  onChange={this.onChangeChildren}
+                  value={this.state.relationshipLooking}
+                  onChange={this.onChangeRelationshipLooking }
                   fullWidth = {true}
                   >       
                     <MenuItem value={"Casual Dating"} primaryText = "Casual Dating" />
@@ -169,8 +192,8 @@ getProfile = (email) => {
                 <br/>
                 <SelectField 
                   name = "haveChildren"
-                  floatingLabelText= "Has Children"
-                  value={this.state.haschildren}
+                  floatingLabelText= "Have Children"
+                  value={this.state.haveChildren}
                   onChange={this.onChangeChildren}
                   fullWidth = {true}
                   >       
@@ -186,21 +209,21 @@ getProfile = (email) => {
                     name = "employmentStatus"
                     floatingLabelText= "Employment Status"
                     value={this.state.employmentStatus}
-                    onChange={this.onChange}
+                    onChange={this.onChangeEmploymentStatus}
                     fullWidth = {true}
                     >       
                       <MenuItem value={"employed"} primaryText = "Employed" />
                       <MenuItem value={"Self-employed"} primaryText = "Self Employee" />
                       <MenuItem value={"Not Working"} primaryText = "Not Working" />
-                      <MenuItem value={"No-Answer"} primaryText = "No Preference" />
+                      <MenuItem value={"No Preference"} primaryText = "No Preference" />
 
                   </SelectField>
                   <br/>
                   <SelectField 
-                    name = "education"
+                    name = "educationLevel"
                     floatingLabelText= "Education Level"
-                    value={this.state.employmentStatus}
-                    onChange={this.onChange}
+                    value={this.state.educationLevel }
+                    onChange={this.onChangeEducation }
                     fullWidth = {true}
                     >       
                       <MenuItem value={"Masters / Professional / Ph.D’s degree"} primaryText = "Profesional" />
@@ -208,7 +231,7 @@ getProfile = (email) => {
                       <MenuItem value={"Some College/Trade/technical/vocational training"} primaryText = "Some College" />
                       <MenuItem value={"High School"} primaryText = "High School" />
                       <MenuItem value={"Less than high school"} primaryText = "Less than High School" />
-                      <MenuItem value={"No answer"} primaryText = "No preference" />
+                      <MenuItem value={"No Preference"} primaryText = "No Preference" />
                   </SelectField>
 
 
@@ -293,69 +316,3 @@ export default SearchOnePage;
 
 
 
-
-
-//     const styles = theme => ({
-
-//     mainFeaturedPostContent: {
-//         padding: `${theme.spacing.unit * 6}px`,
-//         [theme.breakpoints.up('md')]: {
-//         paddingRight: 0,
-//         },
-//     },
-
-//     toolbarMain: {
-//         //borderBottom: `1px solid ${theme.palette.grey[300]}`,
-//         alignItems: "right"
-//     },
-
-//     card: {
-//         display: "flex",
-//         boxShadow: 'rgba(255, 0, 0, 0.117647) 0px 1px 6px, rgba(255, 0, 0, 0.117647) 0px 1px 4px',
-//     },
-
-//     BioCard: {
-//         boxShadow: 'rgba(255, 0, 0, 0.117647) 0px 1px 6px, rgba(255, 0, 0, 0.117647) 0px 1px 4px',
-//     },
-
-//     footerCard: {
-//         boxShadow: 'rgba(255, 0, 0, 0.117647) 0px 1px 6px, rgba(255, 0, 0, 0.117647) 0px 1px 4px',
-//     },
-//     specialBorderCard:{
-//         margin: 25 ,
-//         boxShadow: 'rgba(255, 0, 0, 0.117647) 0px 1px 6px, rgba(255, 0, 0, 0.117647) 0px 1px 4px',
-//         display: "relative"
-//     },
-
-
-//     footer: {
-//         backgroundColor: theme.palette.background.paper,
-//         marginTop: theme.spacing.unit * 2,
-//         padding: `${theme.spacing.unit * 6}px 0`,
-//     }
-//     });
-
-
-//     // const useStyles = makeStyles(theme => ({
-//     //   root: {
-//     //     display: 'flex',
-//     //     flexWrap: 'wrap',
-//     //   },
-//     //   formControl: {
-//     //     margin: theme.spacing.unit,
-//     //     minWidth: 120,
-//     //   },
-//     //   selectEmpty: {
-//     //     marginTop: theme.spacing.unit * 2,
-//     //   },
-//     // }));
-    
-
-//   ////END STYLES //  
-
-
-// SearchOnePage.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
-
-// export default withStyles(styles)(SearchOnePage);

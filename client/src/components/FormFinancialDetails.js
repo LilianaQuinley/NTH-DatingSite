@@ -162,7 +162,7 @@ export class FormFinancialDetails extends Component {
                                 labelPlacement="start"
                             />
                              <FormControlLabel
-                                value="No-Answer"
+                                value="PreferNoAnswer"
                                 control={<Radio color="primary" />}
                                 label="Prefer Not to answer"
                                 labelPlacement="start"
