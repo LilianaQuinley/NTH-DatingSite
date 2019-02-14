@@ -16,6 +16,19 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
+import Particles from 'react-particles-js';
+
+const particleOpt =  {
+    particles: {
+      number: {
+        value: 150,
+        density : {
+          enable: true,
+          value_area: 600
+        }
+      }
+    }
+  }
 
 
 
@@ -212,6 +225,9 @@ export class FormFinancialDetails extends Component {
                     >
                     Continue
                 </Button>
+
+                <Particles 
+                        params={particleOpt}/> 
 
                 </React.Fragment>
             </MuiThemeProvider>    

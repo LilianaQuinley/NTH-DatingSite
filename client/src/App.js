@@ -10,22 +10,8 @@ import MainPage from "./components/MainPage";
 import InputFormMain from './InputFormMain';
 import ProfilePage from "./components/ProfilePage";
 import SearchPage from "./components/SearchPage";
-import Particles from 'react-particles-js';
+
   
-
-const particleOpt =  {
-  particles: {
-    number: {
-      value: 150,
-      density : {
-        enable: true,
-        value_area: 900
-      }
-      
-    }
-  }
-
-}
 
 
 class App extends Component {
@@ -59,7 +45,7 @@ class App extends Component {
     if(this.state.userState == "registering") {
       return (
         <div className = "App">
-          <UserForm email={this.state.email} toggleFun ={this.toggleFun}/>
+          <UserForm  firstName={this.state.firstName} lastName = {this.state.lastName} email={this.state.email} toggleFun ={this.toggleFun}/>
           <Footer />
         </div>
       )}
@@ -67,14 +53,8 @@ class App extends Component {
         return (
         <div className = "App">
           <MenuAppBar toggleFun ={this.toggleFun}/>
-         
-        
+          <MainPage toggleFun ={this.toggleFun} />
 
-    <MainPage toggleFun ={this.toggleFun} >
-    {/* <Particles 
-          params={particleOpt}  >
-            </Particles> */}
-    </MainPage>
     
 
         </div>

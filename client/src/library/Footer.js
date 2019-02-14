@@ -17,7 +17,6 @@ export class Footer extends Component {
             <Tabs
                 value = {0}      
                 indicatorColor="primary" 
-                textColor = "blue"
                 centered
                 style={{ marginTop: 150}}
              >

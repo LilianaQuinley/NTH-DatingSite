@@ -10,6 +10,20 @@ import { withStyles } from '@material-ui/core/styles';
 
 import {List, ListItem} from "material-ui/List";
 import api from '../library/API';
+import Particles from 'react-particles-js';
+
+const particleOpt =  {
+    particles: {
+      number: {
+        value: 150,
+        density : {
+          enable: true,
+          value_area: 600
+        }
+      }
+    }
+  }
+
 
 
 export class Confirm extends Component {
@@ -18,7 +32,7 @@ export class Confirm extends Component {
         e.preventDefault();
         console.log("Save the user");
         console.log(this.props)
-        api.createUserProfile(this.props.values, () => {this.props.toggleFun('profile')})
+        api.createUserProfile(this.props.values, () => {this.props.toggleFun('profile', this.props.mail, this.props.values)})
         //PROCESS FORM //
         
     };
@@ -58,102 +72,102 @@ export class Confirm extends Component {
 
                     <ListItem
                         primaryText = {
-                        <Typography variant="h6" style={{ color: 'blue' }}>Birthday
+                        <Typography variant="h6" style={{ color: 'white' }}>Birthday
                         </Typography>
                         }
                         secondaryText = {
-                        <Typography  component = "h1" style={{ color: 'black' }}>{ birthday } 
+                        <Typography  component = "display4" style={{ color: 'blue' }}>{ birthday } 
                         </Typography>
                         }
                     />
 
                     <ListItem
                         primaryText = {
-                        <Typography variant="h6" style={{ color: 'blue' }}>Gender
+                        <Typography variant="h6" style={{ color: 'white' }}>Gender
                         </Typography>
                         }
                         secondaryText = {
-                        <Typography  component = "h1" style={{ color: 'black' }}>{ gender } 
+                        <Typography  component = "display4"  style={{ color: 'blue' }}>{ gender } 
                         </Typography>
                         }
                     />  
                     <ListItem
-                        primaryText = {
-                        <Typography variant="h6" style={{ color: 'blue' }}>Looking For
+                         primaryText = {
+                        <Typography variant="h6" style={{ color: 'white' }}>Looking For
                         </Typography>
                         }
                         secondaryText = {
-                        <Typography  component = "h1" style={{ color: 'black' }}>{ lookingFor } 
+                        <Typography  component = "display4" style={{ color: 'blue' }}>{ lookingFor } 
                         </Typography>
                         }
                     />        
                     <ListItem
                         primaryText = {
-                        <Typography variant="h6" style={{ color: 'blue' }}>Ethnic
+                        <Typography variant="h6" style={{ color: 'white' }}>Ethnic
                         </Typography>
                         }
-                        secondaryText = {
-                        <Typography  component = "h1" style={{ color: 'black' }}>{ ethnic } 
+                        primaryText = {
+                        <Typography  component = "display4" style={{ color: "blue" }}>{ ethnic } 
                         </Typography>
                         }
                     />
                     <ListItem
                         primaryText = {
-                        <Typography variant="h6" style={{ color: 'blue' }}>Relationship Status
+                        <Typography variant="h6" style={{ color: 'white' }}>Relationship Status
                         </Typography>
                         }
                         secondaryText = {
-                        <Typography  component = "h1" style={{ color: 'black' }}>{ relationshipStatus } 
+                        <Typography  component = "display4" style={{ color: 'blue' }}>{ relationshipStatus } 
                         </Typography>
                         }
                     />
                     <ListItem
                         primaryText = {
-                        <Typography variant="h6" style={{ color: 'blue' }}>Relationship Looking For
+                        <Typography variant="h6" style={{ color: 'white' }}>Relationship Looking For
                         </Typography>
                         }
                         secondaryText = {
-                        <Typography  component = "h1" style={{ color: 'black' }}>{ relationshipLooking } 
+                        <Typography  component = "display4" style={{ color: 'blue' }}>{ relationshipLooking } 
                         </Typography>
                         }
                     />
                     <ListItem
                         primaryText = {
-                        <Typography variant="h6" style={{ color: 'blue' }}>Have Children
+                        <Typography variant="h6" style={{ color: 'white' }}>Have Children
                         </Typography>
                         }
                         secondaryText = {
-                        <Typography  component = "h1" style={{ color: 'black' }}>{ haveChildren } 
+                        <Typography  component = "display4" style={{ color: 'blue' }}>{ haveChildren } 
                         </Typography>
                         }
                     />
                     <ListItem
                         primaryText = {
-                        <Typography variant="h6" style={{ color: 'blue' }}>Education Level
+                        <Typography variant="h6" style={{ color: 'white' }}>Education Level
                         </Typography>
                         }
                         secondaryText = {
-                        <Typography  component = "h1" style={{ color: 'black' }}>{ educationLevel } 
+                        <Typography  component = "display4" style={{ color: 'blue' }}>{ educationLevel } 
                         </Typography>
                         }
                     />
                     <ListItem
                         primaryText = {
-                        <Typography variant="h6" style={{ color: 'blue' }}>Employment Status
+                        <Typography variant="h6" style={{ color: 'white' }}>Employment Status
                         </Typography>
                         }
                         secondaryText = {
-                        <Typography  component = "h1" style={{ color: 'black' }}>{ employmentStatus } 
+                        <Typography  component = "display4" style={{ color: 'blue' }}>{ employmentStatus } 
                         </Typography>
                         }
                     />
                     <ListItem
                         primaryText = {
-                        <Typography variant="h6" style={{ color: 'blue' }}>Income Range
+                        <Typography variant="h6" style={{ color: 'white' }}>Income Range
                         </Typography>
                         }
                         secondaryText = {
-                        <Typography  component = "h1" style={{ color: 'black' }}>{ incomeRange } 
+                        <Typography  component = "display4" style={{ color: 'blue' }}>{ incomeRange } 
                         </Typography>
                         }
                     />
@@ -182,6 +196,10 @@ export class Confirm extends Component {
                     >
                     Confirm & Continue
                 </Button>
+
+                <Particles 
+                        params={particleOpt}/> 
+
             </React.Fragment>
         </MuiThemeProvider>
 
