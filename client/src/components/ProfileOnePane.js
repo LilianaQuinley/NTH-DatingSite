@@ -169,7 +169,6 @@ const styles = theme => ({
                               <TextField
                                     id="outlined-full-width"
                                     label="Ethnic"
-                                    //style={{ margin: 8 }}
                                     placeholder="Caucasian"
                                     defaultValue= {ethnic}
                                     fullWidth

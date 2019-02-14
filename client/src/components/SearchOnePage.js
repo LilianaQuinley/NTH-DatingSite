@@ -209,28 +209,12 @@ onChangeEthnic = (e, index, value) => {
                                   <IconButton  onClick= "">
                                   <SearchIcon color="error" fontSize="large"/>
                       </IconButton>
-                                  <TextField
-
-                                  
-                                    id="outlined-full-width"
-                                    label="Ethnic"
-                                    placeholder="Caucasian"
-                                    defaultValue= " Result "
-                                    fullWidth
-                                    margin="normal"
-                                    variant="outlined"
-                                    InputLabelProps={{
-                                      shrink: true,
-                                    }}
-                                  >
-                          
-                                  </TextField>
-
-
-                </Grid>
-
-        
- 
+                      <ul>
+                        Results
+        {/* {this.state.data.map(d => <li key={d.name}>{d.name}</li>)} */}
+                      </ul>
+  
+                </Grid>      
                 </Grid>
           </Grid>
           </div>
