@@ -69,8 +69,8 @@ class App extends Component {
       else if (this.state.userState == "search"){
         return (
         <div className = "App">
-          {/* <SearchPage goProfile = {this.goProfile}/> */}
-          <SearchPage/>
+          <SearchPage goProfile = {this.goProfile}/>
+          {/* //<SearchPage/> */}
 
         </div>
       )}

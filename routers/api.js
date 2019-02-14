@@ -72,7 +72,7 @@ module.exports = app => {
                     DB.UserProfile.find({email: body.email}, function (profErr, profResults) {
                         if (profResults.length > 0) {
                             console.log("goodlogin");
-                            return res.send ({result:"goodlogin", profile:profResults[0]})      
+                            return res.send ({result:"goodlogin", profile:profResults[0], user: results[0]})      
                         }
                         else {
                             console.log("noprofil");

@@ -37,6 +37,10 @@ const API = {
         return axios.post('/api/login', body)
         .then(function (response) {
             if (response.data.result == "goodlogin") {
+                let profile = response.data.profile;
+                let user = response.data.user;
+                profile.lastName = user.lastName;
+                profile.firstName = user.firstName;
                  sucess("profile", response.data.profile);        
             }
             else if (response.data.result == "noprofile"){

@@ -11,13 +11,14 @@ import Typography from '@material-ui/core/Typography';
 import TextField  from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-
 import API from '../library/API';
 
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+
+import Picture from "../Assets/Images/beach.jpeg"
 
 
 
@@ -55,6 +56,7 @@ onChangeEthnic = (e, index, value) => {
 
   
 
+  //// Search Results
 
   render() {
     return (
@@ -173,10 +175,34 @@ onChangeEthnic = (e, index, value) => {
                 floatingLabelText = "FILLIN UP SPACE - RELLENO"
                 fullWidth = {true}>
           </TextField>
-        RESULTS PANEL
+    
+    
+    
+    {/* /////RESULTS PANEL */}
         
+
+<Paper>
+          <Grid container>
+            <Grid item md={4}>
+            <div>
+              <Grid container  spacing={16}>
+                <Grid item sm={4}>
+
+                </Grid>
+              </Grid>
+            </div>
+            </Grid>
+          </Grid>
+  </Paper>
+
+
+
+
+
+
         <Card >
                             <div >
+
                               <CardContent>
                                 <CardMedia
                                     component="img"
