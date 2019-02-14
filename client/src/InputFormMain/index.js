@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Formik } from "formik";
 import { FormMain } from "./form";
-import * as Yup from "yup"
+import * as Yup from "yup";
+
 
 const validationSchema = Yup.object({
   firstName: Yup.string("Enter your First Name")
@@ -18,6 +19,7 @@ const validationSchema = Yup.object({
   .required("Confirm your password")
   .oneOf([Yup.ref("password")], "Password does not match")
 });
+
 
 class InputForm extends Component {
  constructor(props) {
@@ -36,8 +38,7 @@ class InputForm extends Component {
 
     <div >     
         <h1 style={{ marginTop: 80, marginRight: 90}}>Sign UP !</h1>
-         <h2 style={{ marginRight: 90}}> There is Nothing to Loose! </h2>
-         
+        <h2 style={{ marginRight: 90}}> There is Nothing to Loose! </h2>
   
         <Formik
             render={props => <FormMain {...props} toggleFun = {toggleFun} />}

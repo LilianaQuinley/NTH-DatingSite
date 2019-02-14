@@ -10,12 +10,28 @@ import MainPage from "./components/MainPage";
 import InputFormMain from './InputFormMain';
 import ProfilePage from "./components/ProfilePage";
 import SearchPage from "./components/SearchPage";
+import Particles from 'react-particles-js';
+
+
+const particleOpt =  {
+  particles: {
+    number: {
+      value: 150,
+      density : {
+        enable: true,
+        value_area: 900
+      }
+      
+    }
+  }
+
+}
 
 
 class App extends Component {
   constructor (props) {
     super (props);
-    this.state = {userState : "search"}
+    this.state = {userState : "nonuser"}
   }
 
   toggleFun = (stateS, email, profile, firstName, lastName) => {
@@ -51,7 +67,16 @@ class App extends Component {
         return (
         <div className = "App">
           <MenuAppBar toggleFun ={this.toggleFun}/>
-          <MainPage toggleFun ={this.toggleFun} />
+         
+        
+
+    <MainPage toggleFun ={this.toggleFun} >
+    {/* <Particles 
+          params={particleOpt}  >
+            </Particles> */}
+    </MainPage>
+    
+
         </div>
       )}
       else if (this.state.userState == "profile"){
