@@ -116,7 +116,9 @@ module.exports = app => {
         DB.UserProfile.find ({email: email}, function (err, results) {
             if (!err) {
                 if (results.length > 0) {
-                    res.send(results[0])
+                    DB.User.find ({email: email}, function (err, userResults) {
+                       res.send({profile: results[0], user: userResults[0]})
+                    });
                 }
                 else {
                     res.send({result: "noprofile"})

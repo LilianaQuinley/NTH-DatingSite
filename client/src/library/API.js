@@ -69,7 +69,28 @@ const API = {
             console.log(error);
             failure();
           });
-      }
+      },
+
+      getProfile: function(email, success, failure) {
+        return axios.get('/api/getprofile', { params: { email: email}})
+        .then(function (response) {
+          console.log("Response from getProfile")
+          console.log(response.data);
+          let profile = response.data.profile;
+          let user = response.data.user;
+          profile.lastName = user.lasetName
+          profile.firstName = user.firstName
+          success(profile)
+        })
+        .catch(function (error) {
+          console.log(error);
+          failure();
+        });
+    }
+
+
+
+
 };
 
 export default API;

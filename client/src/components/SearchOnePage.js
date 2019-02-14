@@ -53,6 +53,10 @@ onChangeEthnic = (e, index, value) => {
   this.setState({ethnic: value}, () => {this.updateSearch()});
   };
 
+getProfile = (email) => {
+  API.getProfile(email, (profile) => this.props.toggleFun ("profile", profile.email, profile),
+() => alert ("Failure"))
+}
   
 
   //// Search Results
@@ -100,9 +104,10 @@ onChangeEthnic = (e, index, value) => {
                   floatingLabelText= "Gender"
                   value={this.state.gender}
                   onChange={this.onChangeGender}
+                  fullWidth = {true}
                   >       
-                    <MenuItem value={"Male"} primaryText = "Male" />
                     <MenuItem value={"Female"} primaryText = "Female" />
+                    <MenuItem value={"Male"} primaryText = "Male" />
                     <MenuItem value={"Other"} primaryText = "No Preference" />
                 </SelectField>
                 <br/>
@@ -111,23 +116,67 @@ onChangeEthnic = (e, index, value) => {
                   floatingLabelText= "Looking For"
                   value={this.state.lookingFor}
                   onChange={this.onChange}
+                  fullWidth = {true}
                   >       
-                    <MenuItem value={"Male"} primaryText = "Male" />
                     <MenuItem value={"Female"} primaryText = "Female" />
-                    <MenuItem value={"Either"} primaryText = "No preference" />
+                    <MenuItem value={"Male"} primaryText = "Male" />
+                    <MenuItem value={"Both Men or Woman"} primaryText = "No preference" />
                 </SelectField>
+                <br/>
+                  <SelectField 
+                    name = "ethnic"
+                    floatingLabelText= "Ethnic"
+                    value={this.state.ethnic}
+                    onChange={this.onChangeEthnic}
+                    fullWidth = {true}
+                    >       
+                    <MenuItem value={"White"} primaryText = "Caucasian" />
+                    <MenuItem value={"Hispanic or Latino"} primaryText = "Latino / Latina" />
+                    <MenuItem value={"Black or African American" } primaryText = " Black or African American" />
+                    <MenuItem value={"Native American or American Indian"} primaryText = " Native American or American Indian" />
+                    <MenuItem value={"Native Asian / Pacific Islander"} primaryText = " Native Asian / Pacific Islander" />
+                    <MenuItem value={"Other" } primaryText = "No Preference" />
+                </SelectField>
+                <br/>
+                <SelectField 
+                  name = "relationshipStatus"
+                  floatingLabelText= "RelationShip Status"
+                  value={this.state.haschildren}
+                  onChange={this.onChangeChildren}
+                  fullWidth = {true}
+                  >       
+                    <MenuItem value={"Single (Never married)"} primaryText = "Single" />
+                    <MenuItem value={"Divorced"} primaryText = "Divorced" />
+                    <MenuItem value={"Separated"} primaryText = "Separated" />
+                    <MenuItem value={"It's Complicated"} primaryText = "No preference" />
+                  </SelectField>
+                  <br/>
+                <SelectField 
+                  name = "relationshipLooking"
+                  floatingLabelText= " Type of relationship Looking for"
+                  value={this.state.haschildren}
+                  onChange={this.onChangeChildren}
+                  fullWidth = {true}
+                  >       
+                    <MenuItem value={"Casual Dating"} primaryText = "Casual Dating" />
+                    <MenuItem value={"Long-Term Relationship"} primaryText = "Long-Term Relationship" />
+                    <MenuItem value={"Marriage"} primaryText = "Marriage" />
+                    <MenuItem value={"No-Preference"} primaryText = "No preference" />
+                  </SelectField>
+
                 <br/>
                 <SelectField 
                   name = "haveChildren"
                   floatingLabelText= "Has Children"
                   value={this.state.haschildren}
                   onChange={this.onChangeChildren}
+                  fullWidth = {true}
                   >       
                     <MenuItem value={"No"} primaryText = "No" />
                     <MenuItem value={"Yes (Living at home full time)"} primaryText = "Yes (Living at home full time)" />
                     <MenuItem value={"Yes (Living at home part time)"} primaryText = "Yes (Living at home part time)" />
                     <MenuItem value={"Yes (Not Living at home)"} primaryText = "Yes (Not Living at home)" />
-                    <MenuItem value={"No Preference"} primaryText = "No Preference" />
+                    <MenuItem value={"No-Preference"} primaryText = "No Preference" />
                   </SelectField>
 
                   <br/>
@@ -136,27 +185,31 @@ onChangeEthnic = (e, index, value) => {
                     floatingLabelText= "Employment Status"
                     value={this.state.employmentStatus}
                     onChange={this.onChange}
+                    fullWidth = {true}
                     >       
                       <MenuItem value={"employed"} primaryText = "Employed" />
-                      <MenuItem value={"selfEmployed"} primaryText = "Self Employee" />
-                      <MenuItem value={"notWorking"} primaryText = "Not Working" />
-                      <MenuItem value={"No Preference"} primaryText = "No Preference" />
+                      <MenuItem value={"Self-employed"} primaryText = "Self Employee" />
+                      <MenuItem value={"Not Working"} primaryText = "Not Working" />
+                      <MenuItem value={"No-Answer"} primaryText = "No Preference" />
 
                   </SelectField>
-
                   <br/>
                   <SelectField 
-                    name = "ethnic"
-                    floatingLabelText= "Ethnic"
-                    value={this.state.ethnic}
-                    onChange={this.onChangeEthnic}
+                    name = "education"
+                    floatingLabelText= "Education Level"
+                    value={this.state.employmentStatus}
+                    onChange={this.onChange}
+                    fullWidth = {true}
                     >       
-                    <MenuItem value={"White"} primaryText = "White" />
-                    <MenuItem value={"Latino"} primaryText = "Latino" />
-                    <MenuItem value={ "Black or African American" } primaryText = " Black or African American" />
-                    <MenuItem value={" Native American or American Indian"} primaryText = " Native American or American Indian" />
-                    <MenuItem value={ "NoPreference" } primaryText = "No Preference" />
-                </SelectField>
+                      <MenuItem value={"Masters / Professional / Ph.D’s degree"} primaryText = "Profesional" />
+                      <MenuItem value={"Bachelorette / Associate’s degree"} primaryText = "Bachelorette" />
+                      <MenuItem value={"Some College/Trade/technical/vocational training"} primaryText = "Some College" />
+                      <MenuItem value={"High School"} primaryText = "High School" />
+                      <MenuItem value={"Less than high school"} primaryText = "Less than High School" />
+                      <MenuItem value={"No answer"} primaryText = "No preference" />
+                  </SelectField>
+
+
                 </Grid>
           </Grid>
           </div>
@@ -209,7 +262,7 @@ onChangeEthnic = (e, index, value) => {
 
                       <ul>                        
                         {this.state.searchResults.map(d => <li key={d.email}>{d.firstName} {d.lastName}
-                          <IconButton  onClick= "">
+                          <IconButton  onClick= {() => this.getProfile (d.email)}>
                               <SearchIcon color="error" fontSize="small"/>
                           </IconButton>    
                         </li>)}

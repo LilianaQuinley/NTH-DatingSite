@@ -64,13 +64,11 @@ export class FormUserDetails extends Component {
                     <form className={classes.container} noValidate>
 
                         <Typography variant="h6" color="inherit" className={classes.grow}>
-                        What is your 
-                        <br/>
-                        Birthday, 
+                        What is your Birthday
                         <br/>
                         Gender and 
                         <br/>
-                        Seeking for..
+                        what are your looking for..
                         </Typography>
                   
                     <FormControl component="fieldset" className={classes.formControl}>
@@ -92,7 +90,7 @@ export class FormUserDetails extends Component {
                         <FormLabel component="legend" className={classes.formLabel}>Gender</FormLabel>
                             <RadioGroup
                             aria-label="gender"
-                            name="gender2"
+                            name="gender"
                             onChange={handleChange ('gender')}
                             defaultValue= {values.gender}
                             className={classes.group}

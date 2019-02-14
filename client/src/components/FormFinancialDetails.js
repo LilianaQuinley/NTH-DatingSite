@@ -119,9 +119,15 @@ export class FormFinancialDetails extends Component {
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="High Less than high school"
+                                value="Less than high school"
                                 control={<Radio color="primary" />}
                                 label="Less than high school"
+                                labelPlacement="start"
+                            />
+                            <FormControlLabel
+                                value="No answer"
+                                control={<Radio color="primary" />}
+                                label="Prefer Not to Answer"
                                 labelPlacement="start"
                             />
                         </RadioGroup>
@@ -155,6 +161,13 @@ export class FormFinancialDetails extends Component {
                                 label="Not Working"
                                 labelPlacement="start"
                             />
+                             <FormControlLabel
+                                value="No-Answer"
+                                control={<Radio color="primary" />}
+                                label="Prefer Not to answer"
+                                labelPlacement="start"
+                            />
+                            
                             </RadioGroup>
                         
                     </FormControl>

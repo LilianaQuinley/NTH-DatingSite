@@ -148,6 +148,12 @@ export class FormPersonalDetails extends Component {
                                 label="Marriage"
                                 labelPlacement="start"
                             />
+                            <FormControlLabel
+                                value="No-Preference"
+                                control={<Radio color="primary" />}
+                                label="No Preference"
+                                labelPlacement="start"
+                            />
                             </RadioGroup>
                     </FormControl>
 
@@ -185,6 +191,12 @@ export class FormPersonalDetails extends Component {
                                 label="Yes (Not Living at home)"
                                 labelPlacement="start"
                             />
+                            <FormControlLabel
+                                value="No-Preference)"
+                                control={<Radio color="primary" />}
+                                label="No Preference"
+                                labelPlacement="start"
+                            />
                             </RadioGroup>                        
                     </FormControl>
 
@@ -211,7 +223,7 @@ export class FormPersonalDetails extends Component {
                     >
                     Continue
                 </Button>
-                
+
                      <Particles 
                         params={particleOpt}/> 
 
