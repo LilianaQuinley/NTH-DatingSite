@@ -108,7 +108,8 @@ getProfile = (email) => {
                   >       
                     <MenuItem value={"Female"} primaryText = "Female" />
                     <MenuItem value={"Male"} primaryText = "Male" />
-                    <MenuItem value={"Other"} primaryText = "No Preference" />
+                    <MenuItem value={"Other"} primaryText = "Other" />
+                    <MenuItem value={"No Preference"} primaryText = "No Preference" />
                 </SelectField>
                 <br/>
                 <SelectField 
@@ -135,7 +136,8 @@ getProfile = (email) => {
                     <MenuItem value={"Black or African American" } primaryText = " Black or African American" />
                     <MenuItem value={"Native American or American Indian"} primaryText = " Native American or American Indian" />
                     <MenuItem value={"Native Asian / Pacific Islander"} primaryText = " Native Asian / Pacific Islander" />
-                    <MenuItem value={"Other" } primaryText = "No Preference" />
+                    <MenuItem value={"Other" } primaryText = "Other" />
+                    <MenuItem value={"No Preference" } primaryText = "No Preference" />
                 </SelectField>
                 <br/>
                 <SelectField 
@@ -161,7 +163,7 @@ getProfile = (email) => {
                     <MenuItem value={"Casual Dating"} primaryText = "Casual Dating" />
                     <MenuItem value={"Long-Term Relationship"} primaryText = "Long-Term Relationship" />
                     <MenuItem value={"Marriage"} primaryText = "Marriage" />
-                    <MenuItem value={"No-Preference"} primaryText = "No preference" />
+                    <MenuItem value={"No Preference"} primaryText = "No preference" />
                   </SelectField>
 
                 <br/>
@@ -176,7 +178,7 @@ getProfile = (email) => {
                     <MenuItem value={"Yes (Living at home full time)"} primaryText = "Yes (Living at home full time)" />
                     <MenuItem value={"Yes (Living at home part time)"} primaryText = "Yes (Living at home part time)" />
                     <MenuItem value={"Yes (Not Living at home)"} primaryText = "Yes (Not Living at home)" />
-                    <MenuItem value={"No-Preference"} primaryText = "No Preference" />
+                    <MenuItem value={"No Preference"} primaryText = "No Preference" />
                   </SelectField>
 
                   <br/>

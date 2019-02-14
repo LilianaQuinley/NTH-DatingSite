@@ -7,8 +7,6 @@ import image from "../Assets/Images/beach.jpeg"
 import ProfileAppBar from '../library/ProfileAppBar';
 import SearchOnePage from './SearchOnePage';
 
-
-
 export class SearchPage extends Component {
   render() {
 

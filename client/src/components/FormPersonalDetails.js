@@ -149,7 +149,7 @@ export class FormPersonalDetails extends Component {
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="No-Preference"
+                                value="No Preference"
                                 control={<Radio color="primary" />}
                                 label="No Preference"
                                 labelPlacement="start"
@@ -192,9 +192,9 @@ export class FormPersonalDetails extends Component {
                                 labelPlacement="start"
                             />
                             <FormControlLabel
-                                value="No-Preference)"
+                                value="No Preference"
                                 control={<Radio color="primary" />}
-                                label="No Preference"
+                                label="Prefer No to answer"
                                 labelPlacement="start"
                             />
                             </RadioGroup>                        
