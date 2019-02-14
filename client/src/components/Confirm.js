@@ -103,10 +103,10 @@ export class Confirm extends Component {
                     />        
                     <ListItem
                         primaryText = {
-                        <Typography variant="h6" style={{ color: 'white' }}>Ethnic
+                        <Typography variant="h6" style={{ color: 'white' }}>Ethnicity
                         </Typography>
                         }
-                        primaryText = {
+                        secondaryText = {
                         <Typography  component = "display4" style={{ color: "blue" }}>{ ethnic } 
                         </Typography>
                         }

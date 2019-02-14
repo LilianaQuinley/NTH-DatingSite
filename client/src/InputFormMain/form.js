@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button";
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import API from '../library/API';
+import Typography from '@material-ui/core/Typography';
 
 export const FormMain = (props) => {
   const {toggleFun} = props;
@@ -105,6 +106,14 @@ export const FormMain = (props) => {
        onChange={change.bind(null, "confirmPassword")}
 
      />
+
+     <br/>
+
+        <Typography variant="p" align="center" color="textSecondary" gutterBottom >
+        By clicking Continue, I agree to the Terms of Use
+        </Typography> 
+
+
      <Button
        type="submit" 
        variant="raised"
@@ -112,7 +121,7 @@ export const FormMain = (props) => {
        style={{ marginTop: 25, padding:10}}
        disabled={!isValid}
      >
-       Submit
+       Continue
      </Button>
   
    </form>
