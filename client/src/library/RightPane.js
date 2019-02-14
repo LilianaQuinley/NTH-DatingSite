@@ -3,6 +3,8 @@ import Paper from '@material-ui/core/Paper';
 import InputFormMain from '../InputFormMain';
 
 
+
+
 export class RightPane extends Component {
   render() {
     const {toggleFun} = this.props;

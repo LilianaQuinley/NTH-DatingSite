@@ -35,7 +35,6 @@ export class MainPage extends Component {
             <Grid item sm>
                 <RightPane  toggleFun = {toggleFun} /> 
             </Grid>
-
              
         </Grid>
         <Particles 

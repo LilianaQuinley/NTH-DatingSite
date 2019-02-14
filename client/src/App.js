@@ -11,7 +11,7 @@ import InputFormMain from './InputFormMain';
 import ProfilePage from "./components/ProfilePage";
 import SearchPage from "./components/SearchPage";
 import Particles from 'react-particles-js';
-
+  
 
 const particleOpt =  {
   particles: {
