@@ -7,7 +7,6 @@ import FaceIcon from '@material-ui/icons/Face';
 import SearchIcon from '@material-ui/icons/Search';
 import Typography from '@material-ui/core/Typography';
 
-
 import TextField  from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
