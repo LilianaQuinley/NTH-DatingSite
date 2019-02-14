@@ -25,19 +25,20 @@ class SearchOnePage extends Component {
   state = {
     searchText: '',
     money: '',
+    searchResults: []
 }
 
 updateSearch = () => {
   console.log("state for search");
   console.log(this.state);
   const body = Object.keys(this.state)
-    .filter(key => this.state[key] != "" && this.state[key] != "No Preference")
+    .filter(key => this.state[key] != "" && this.state[key] != "No Preference" && key != "searchResults")
     .reduce((obj, key) => {
       obj[key] = this.state[key];
       return obj;
     }, {});
   console.log(body) 
-  API.search(body, () => alert("Success!"), () => alert("Failure!"))
+  API.search(body, (searchResults) => {this.setState ({searchResults:searchResults})}, () => alert("Failure!"))
 };
 
 onChangeGender = (e, index, value) => {
@@ -139,7 +140,7 @@ onChangeEthnic = (e, index, value) => {
                       <MenuItem value={"employed"} primaryText = "Employed" />
                       <MenuItem value={"selfEmployed"} primaryText = "Self Employee" />
                       <MenuItem value={"notWorking"} primaryText = "Not Working" />
-                      <MenuItem value={"NoPreference"} primaryText = "No Preference" />
+                      <MenuItem value={"No Preference"} primaryText = "No Preference" />
 
                   </SelectField>
 
@@ -150,7 +151,7 @@ onChangeEthnic = (e, index, value) => {
                     value={this.state.ethnic}
                     onChange={this.onChangeEthnic}
                     >       
-                    <MenuItem value={"Caucasian"} primaryText = "Caucasian" />
+                    <MenuItem value={"White"} primaryText = "White" />
                     <MenuItem value={"Latino"} primaryText = "Latino" />
                     <MenuItem value={ "Black or African American" } primaryText = " Black or African American" />
                     <MenuItem value={" Native American or American Indian"} primaryText = " Native American or American Indian" />
@@ -201,17 +202,18 @@ onChangeEthnic = (e, index, value) => {
 
                 <br/>
 
-                <Grid item sm={4}>
-                <Typography variant="subtitle1" color="textSecondary">
-                                    "Something about Results"
-                                  </Typography>
+                <Grid item sm={6}>
+                  <Typography variant="subtitle1" color="textSecondary">
+                    "Take a look of your results!"
+                  </Typography>
 
-                                  <IconButton  onClick= "">
-                                  <SearchIcon color="error" fontSize="large"/>
-                      </IconButton>
-                      <ul>
-                        Results
-        {/* {this.state.data.map(d => <li key={d.name}>{d.name}</li>)} */}
+                      <ul>                        
+                        {this.state.searchResults.map(d => <li key={d.email}>{d.firstName} {d.lastName}
+                          <IconButton  onClick= "">
+                              <SearchIcon color="error" fontSize="small"/>
+                          </IconButton>    
+                        </li>)}
+
                       </ul>
   
                 </Grid>      

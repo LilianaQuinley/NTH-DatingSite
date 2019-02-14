@@ -108,4 +108,25 @@ module.exports = app => {
         });        
     });
 
+    app.get('/api/getprofile', (req, res) => {
+        console.log("search for:")
+        const email = req.query.email;
+        console.log(email);
+
+        DB.UserProfile.find ({email: email}, function (err, results) {
+            if (!err) {
+                if (results.length > 0) {
+                    res.send(results[0])
+                }
+                else {
+                    res.send({result: "noprofile"})
+                }
+            }
+            else {
+                return res.send(err)
+            }
+        });        
+    });
+
+
 }

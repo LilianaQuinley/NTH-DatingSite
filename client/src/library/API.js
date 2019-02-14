@@ -62,7 +62,7 @@ const API = {
         .then(function (response) {
             console.log("Back from search");
             console.log(response);
-            sucess();
+            sucess(response.data);
           })
           .catch(function (error) {
               console.log("Log my error.")
