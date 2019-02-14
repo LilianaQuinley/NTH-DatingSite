@@ -17,7 +17,7 @@ import SearchPage from "./components/SearchPage";
 class App extends Component {
   constructor (props) {
     super (props);
-    this.state = {userState : "nonuser"}
+    this.state = {userState : "search"}
   }
 
   toggleFun = (stateS, email, profile, firstName, lastName) => {
