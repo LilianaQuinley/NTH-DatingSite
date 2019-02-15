@@ -72,7 +72,7 @@ export class FormFinancialDetails extends Component {
 
                     <form className={classes.container} noValidate>
 
-                        <Typography variant="h6" color="inherit" className={classes.grow}>
+                        <Typography variant="h6" color="white" className={classes.grow}>
                         <br/>
                         A Little
                         <br/>
@@ -252,7 +252,7 @@ export class FormFinancialDetails extends Component {
 const styles = theme => ({
 
     grow: {
-        color: "teal"
+        color: "white"
     },
 
     appBar: {

@@ -37,7 +37,7 @@ class InputForm extends Component {
 <React.Fragment>
 
     <div >     
-        <h1 style={{ marginTop: 80, marginRight: 90}}>Sign UP !</h1>
+        <h1 style={{ marginTop: 150, marginRight: 90}}>Sign UP !</h1>
         <h2 style={{ marginRight: 90}}> There is Nothing to Loose! </h2>
   
         <Formik

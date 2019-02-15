@@ -63,7 +63,7 @@ export class FormUserDetails extends Component {
                     
                     <form className={classes.container} noValidate>
 
-                        <Typography variant="h6" color="inherit" className={classes.grow}>
+                        <Typography variant="h6" color="white" className={classes.grow}>
                         What is your Birthday
                         <br/>
                         Gender and 
@@ -217,7 +217,7 @@ export class FormUserDetails extends Component {
 const styles = theme => ({
 
     grow: {
-        color: "teal"
+        color: "white"
     },
 
     appBar: {

@@ -8,30 +8,38 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+
 function LeftPane(props) {
   
   return (
+      
    // < Paper style = {styles.Paper}>
     <Card style = {styles.card}>
-        <CardActionArea>
-            <CardContent>
-                <Typography gutterBottom variant="display1" component="h5" color="primary">
-                    Welcome to NTH!
-                </Typography>
-                <Typography component="h1">
-                    The NEW and IMPROVE way to Find the Right Person for you!
-                    Nothing to Hide offers the most Safe and Sound way to know and meet people !
-                </Typography>
-            </CardContent>
-        </CardActionArea>
-        <CardActions>
-            <Button size="small" component="h1" color="secondary">
-            Share
-            </Button>
-            <Button size="small" component="h1" color="secondary">
-            Learn More
-            </Button>
-        </CardActions>
+              
+                    <CardActionArea>
+                        <CardContent>
+                            <Typography variant = "display2" style={{ color: 'white', textAlign: "center"}}>
+                            Welcome to NTH! !
+                            </Typography>
+
+                            <br/>
+                            <br/>
+                            <Typography variant = "h6" style={{ color: 'black', textAlign: "center"}}>
+                                Welcome to Nothing to Hide! This dating site is the most efficient way to find that perfect someone. We've taken all of the pain and uncertainty you experience in other sites to ensure that what you see is what you expect to see when you first meet someone from here. Join now and take the guess work out of dating!
+                            </Typography>
+
+                            
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <Button size="small" component="h1" color="secondary">
+                        Share
+                        </Button>
+                        <Button size="small" component="h1" color="secondary">
+                        Learn More
+                        </Button>
+                    </CardActions>
+  
         </Card>
    // </Paper>
   );
@@ -40,10 +48,11 @@ function LeftPane(props) {
 const styles = {    
   
     card: {
-        width: 400,
-        height: 200,
+        width: 500,
+        height: 400,
         backgroundColor: 'transparent', 
-        marginLeft: 100      
+        marginLeft: 80, 
+        marginTop: -150
        },
     
     media: {

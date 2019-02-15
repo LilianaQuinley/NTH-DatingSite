@@ -23,13 +23,13 @@ export class MainPage extends Component {
     return (
       <div>
     
-        <Grid container style = {styles.container}>
+        <Grid container >
             <Grid item sm>
-        
-              <Particles 
+            <Particles 
                 params={particleOpt}
-              />
-                <LeftPane  />   
+              /> 
+                <LeftPane  />  
+                
             </Grid>
 
             <Grid item sm>
