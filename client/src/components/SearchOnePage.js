@@ -97,7 +97,7 @@ getProfile = (email) => {
                     name = "searchText"
                     value = {this.state.searchText}
                     onChange = {this.onTextChange}
-                    floatingLabelText = "FILLIN SPACE-RELLENO"
+                    floatingLabelText = "FILLIN SPACE"
                     fullWidth = {true}>
                   </TextField>
                       
@@ -117,13 +117,28 @@ getProfile = (email) => {
                   name = "searchText"
                   value = {this.state.searchText}
                   onChange = {this.onTextChange}
-                  floatingLabelText = "Search for Profiles-- RELLENO"
+                  floatingLabelText = "Nothing It needs to be HERE"
                   fullWidth = {true}>
                 </TextField>
                 <br/>
+                {/* <SelectField 
+                  name = "lookingFor"
+                  floatingLabelText= {<Typography variant = "headline" style={{ color: 'purple', textAlign: "left"}}>I am A</Typography>}
+                  value={this.state.lookingFor}
+                  onChange={this.onChangeLookingFor}
+                  fullWidth = {true}
+                  >       
+                    <MenuItem value={"Female"} primaryText = "Female" />
+                    <MenuItem value={"Male"} primaryText = "Male" />
+                    <MenuItem value={"Both Men or Woman"} primaryText = "No preference" />
+                </SelectField> */}
+
+                <br/>
+                <br/>
+                <br/>
                 <SelectField 
                   name = "gender"
-                  floatingLabelText= "Gender"
+                  floatingLabelText= {<Typography variant = "headline" style={{ color: 'purple', textAlign: "left"}}>Looking for</Typography>}
                   value={this.state.gender}
                   onChange={this.onChangeGender}
                   fullWidth = {true}
@@ -133,28 +148,17 @@ getProfile = (email) => {
                     <MenuItem value={"Other"} primaryText = "Other" />
                     <MenuItem value={"No Preference"} primaryText = "No Preference" />
                 </SelectField>
-                <br/>
-                <SelectField 
-                  name = "lookingFor"
-                  floatingLabelText= "Looking For"
-                  value={this.state.lookingFor}
-                  onChange={this.onChangeLookingFor}
-                  fullWidth = {true}
-                  >       
-                    <MenuItem value={"Female"} primaryText = "Female" />
-                    <MenuItem value={"Male"} primaryText = "Male" />
-                    <MenuItem value={"Both Men or Woman"} primaryText = "No preference" />
-                </SelectField>
+               
                 <br/>
                   <SelectField 
                     name = "ethnic"
-                    floatingLabelText= "Ethnic"
+                    floatingLabelText= {<Typography variant = "headline" style={{ color: 'purple', textAlign: "right"}}>Ethnicity</Typography>}
                     value={this.state.ethnic}
                     onChange={this.onChangeEthnic}
                     fullWidth = {true}
                     >       
-                    <MenuItem value={"White"} primaryText = "Caucasian" />
-                    <MenuItem value={"Hispanic or Latino"} primaryText = "Latino / Latina" />
+                    <MenuItem value={"White"} primaryText = "White" />
+                    <MenuItem value={"Hispanic or Latino"} primaryText = "Hispanic or Latino" />
                     <MenuItem value={"Black or African American" } primaryText = " Black or African American" />
                     <MenuItem value={"Native American or American Indian"} primaryText = " Native American or American Indian" />
                     <MenuItem value={"Native Asian / Pacific Islander"} primaryText = " Native Asian / Pacific Islander" />
@@ -164,7 +168,7 @@ getProfile = (email) => {
                 <br/>
                 <SelectField 
                   name = "relationshipStatus"
-                  floatingLabelText= "RelationShip Status"
+                  floatingLabelText= {<Typography variant = "headline" style={{ color: 'purple', textAlign: "left"}}>Relationship Status</Typography>}
                   value={this.state.relationshipStatus}
                   onChange={this.onChangeRelationshipStatus}
                   fullWidth = {true}
@@ -177,7 +181,7 @@ getProfile = (email) => {
                   <br/>
                 <SelectField 
                   name = "relationshipLooking"
-                  floatingLabelText= " Type of relationship Looking for"
+                  floatingLabelText= {<Typography variant = "headline" style={{ color: 'purple', textAlign: "left"}}>Relationship Looking for</Typography>}
                   value={this.state.relationshipLooking}
                   onChange={this.onChangeRelationshipLooking }
                   fullWidth = {true}
@@ -191,7 +195,7 @@ getProfile = (email) => {
                 <br/>
                 <SelectField 
                   name = "haveChildren"
-                  floatingLabelText= "Have Children"
+                  floatingLabelText= {<Typography variant = "headline" style={{ color: 'purple', textAlign: "left"}}>Have Children</Typography>}
                   value={this.state.haveChildren}
                   onChange={this.onChangeChildren}
                   fullWidth = {true}
@@ -206,7 +210,7 @@ getProfile = (email) => {
                   <br/>
                   <SelectField 
                     name = "employmentStatus"
-                    floatingLabelText= "Employment Status"
+                    floatingLabelText= {<Typography variant = "headline" style={{ color: 'purple', textAlign: "left"}}>Employment Status</Typography>}
                     value={this.state.employmentStatus}
                     onChange={this.onChangeEmploymentStatus}
                     fullWidth = {true}
@@ -220,7 +224,7 @@ getProfile = (email) => {
                   <br/>
                   <SelectField 
                     name = "educationLevel"
-                    floatingLabelText= "Education Level"
+                    floatingLabelText= {<Typography variant = "headline" style={{ color: 'purple', textAlign: "left"}}>Education Level</Typography>}
                     value={this.state.educationLevel }
                     onChange={this.onChangeEducation }
                     fullWidth = {true}
@@ -258,7 +262,7 @@ getProfile = (email) => {
             {/* ////RIGHT PANEL */}
                     <Toolbar >
                       <IconButton  >
-                        <Typography variant="h4" color="error" paragraph>
+                        <Typography variant="h4" color="primary" paragraph>
                           Your Best Match!
                         </Typography>
                       </IconButton>
@@ -270,7 +274,7 @@ getProfile = (email) => {
                   name = "searchText"
                   value = {this.state.searchText}
                   onChange = {this.onTextChange}
-                  floatingLabelText = "Search for Profiles-- RELLENO"
+                  floatingLabelText = "FIILING IN "
                   fullWidth = {true}>
                 </TextField>
                 <br/>
@@ -280,17 +284,18 @@ getProfile = (email) => {
                 <br/>
 
                 <Grid item sm={6}>
-                  <Typography variant="subtitle1" color="textSecondary">
-                    "Take a look of your results!"
-                  </Typography>
+                <Typography variant = "headline" style={{ color: 'blue', textAlign: "center"}}>
+                  Take a Look of your results !
+                </Typography>
 
-                      <ul>                        
-                        {this.state.searchResults.map(d => <li key={d.email}>{d.firstName} {d.lastName}
+                      <ul>  
+                      <Typography variant = "headline" style={{ color: 'red', textAlign: "left"}}>                      
+                        {this.state.searchResults.map(d => <li key={d.email}>{d.firstName}
                           <IconButton  onClick= {() => this.getProfile (d.email)}>
                               <SearchIcon color="error" fontSize="small"/>
                           </IconButton>    
                         </li>)}
-
+                        .......</Typography>
                       </ul>
   
                 </Grid>      
