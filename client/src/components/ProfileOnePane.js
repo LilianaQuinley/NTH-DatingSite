@@ -48,7 +48,7 @@ const styles = theme => ({
 
   toolbarMain: {
     //borderBottom: `1px solid ${theme.palette.grey[300]}`,
-    alignItems: "right"
+    display: "flex",
   },
 
   card: {
@@ -95,29 +95,34 @@ const styles = theme => ({
       <React.Fragment>
      
         <div >
-              <Typography variant="h6" gutterBottom>
-              NTH - Relleno - This needs to be here
-              </Typography>
+          <Typography variant="h6" gutterBottom>
+          NTH - Relleno - This needs to be here
+          </Typography>
 
           <Paper className={classes.mainFeaturedPost}>
             <Grid container>
               <Grid item md={8}>
                 <div className={classes.mainFeaturedPostContent}>
                 <Toolbar className={classes.toolbarMain}>
-                    <Typography variant="h5" color="inherit" paragraph>
-                      My Profile
-                    </Typography>
-                    <IconButton  onClick={search}>
-                      <SearchIcon/>
-                      <Typography variant="h6" align="center" color="textSecondary" gutterBottom >
-              Search
-            </Typography> 
-                    </IconButton>
-                  </Toolbar>
-                      
-      {/* Profile Image CARD  */}
-      <Grid container className={classes.root} spacing={16}>
 
+                  <IconButton>
+                      <Typography variant="h5" color="primary" paragraph>
+                        My Profile
+                      </Typography>
+                      <PersonPinIcon />
+                  </IconButton>
+               
+                  <IconButton  onClick={search}>
+                      <Typography variant="h5"  color="error" paragraph >
+                        Search
+                      </Typography> 
+                      <SearchIcon/>
+                  </IconButton>
+                
+                </Toolbar>
+                      
+                {/* Profile Image CARD  */}
+                <Grid container className={classes.root} spacing={16}>
                       <Grid item sm={4}>   
                         <Card className={classes.card}>
                             <div >

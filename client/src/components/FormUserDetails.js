@@ -217,7 +217,7 @@ export class FormUserDetails extends Component {
 const styles = theme => ({
 
     grow: {
-        color: "white"
+        color: "teal"
     },
 
     appBar: {

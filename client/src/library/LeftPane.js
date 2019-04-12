@@ -18,7 +18,7 @@ function LeftPane(props) {
               
                     <CardActionArea>
                         <CardContent>
-                            <Typography variant = "display2" style={{ color: 'white', textAlign: "center"}}>
+                            <Typography variant = "display2" style={{ color: 'red', textAlign: "center"}}>
                             Welcome to NTH! !
                             </Typography>
 
