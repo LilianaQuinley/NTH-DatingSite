@@ -1,16 +1,16 @@
 # Nothing to Hide React Express App
 
 # Project
-	  
-  Nothing to Hide is a Dating Application 
-
+	  NTH application is a prototype Dating site that allows customers to 	expose details of themselves, 
+	  such as credit status, criminal history and the like. 
+	
 # Objectives
 
 ## Nothing_to_hide.js
 	
-		Create a MySQL database to handle the store
+	Create a MySQL database to handle the store
 
-		Connect the Nothing_to-Hide.js file to the database to allow connection.query'
+	Connect the Nothing_to-Hide.js file to the database to allow connection.query'
 	
 # How to Use
 
@@ -20,11 +20,5 @@
   * if its asking for a product name a combination will work
 
 # Technologies Used
-	 * JavaScript to write the program
-	 * Node.js to run the program
-	 * Inquirer NPM to make the prompts
-	 * console.table to display the data as a table in the console
-	 * MySQL as the stores working database
-   * Node/Express/React app which can be easily deployed to Heroku
-   * Deployment (Heroku)
-
+Technologies Used: JavaScript, Node.js, NPM, ReactJS, Node and Express 	Web Server. backed up by MongoDB Database with Mongoose ORM. It is Deployed using Heroku (with Data)
+   
