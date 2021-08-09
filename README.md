@@ -1,29 +1,30 @@
-# Create React Express App
+# Nothing to Hide React Express App
 
-## About This Boilerplate
+# Project
+	  
+  Nothing to Hide is a Dating Application 
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+# Objectives
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+## Nothing_to_hide.js
+	
+		Create a MySQL database to handle the store
 
-## Starting the app locally
+		Connect the Nothing_to-Hide.js file to the database to allow connection.query'
+	
+# How to Use
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+  * With the code open the console 
+  * type node + either bamazon.js, bamazonManager.js, bamazonSupervisor.js
+  * if it is asking for a quantity only put an intiger
+  * if its asking for a product name a combination will work
 
-```
-yarn install
-```
+# Technologies Used
+	 * JavaScript to write the program
+	 * Node.js to run the program
+	 * Inquirer NPM to make the prompts
+	 * console.table to display the data as a table in the console
+	 * MySQL as the stores working database
+   * Node/Express/React app which can be easily deployed to Heroku
+   * Deployment (Heroku)
 
-This should install node modules within the server and the client folder.
-
-After both installations complete, run the following command in your terminal:
-
-```
-yarn start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
