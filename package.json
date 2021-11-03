@@ -24,7 +24,7 @@
     "if-env": "^1.0.4",
     "markdown-to-jsx": "^6.9.1",
     "mongoose": "^5.4.6",
-    "validator": "^10.11.0"
+    "validator": "^13.7.0"
   },
   "repository": "https://github.com/LilianaQuinley/NTH-DatingSite.git"
 }
